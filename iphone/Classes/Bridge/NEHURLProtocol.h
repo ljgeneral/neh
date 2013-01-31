@@ -1,5 +1,5 @@
 //
-//  NEHUIWebView.h
+//  NEHURLProtocol.h
 //  iphone
 //
 //  Created by hxl on 13-1-31.
@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NEHURLProtocol.h"
 
-@interface NEHUIWebView : UIWebView<UIWebViewDelegate>
-
+@interface NEHURLProtocol : NSURLProtocol
 
 @end

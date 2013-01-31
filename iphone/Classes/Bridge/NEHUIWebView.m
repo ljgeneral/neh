@@ -14,6 +14,7 @@
     self=[super initWithFrame:frame];
     if(self){
         self.delegate = self;
+        [NSURLProtocol registerClass:[NEHURLProtocol class]];
     }
     return self;
 }
@@ -25,6 +26,7 @@
 {
 	NSURL * newUrl = [request URL];
 	
+    NSLog(@"xxxxxx%@",[newUrl absoluteString]);
 	//It's likely to fail, but that way we pass it on to error handling.
 	return YES;
 }

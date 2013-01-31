@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90FEBFA16BACABB00119BC2 /* NEHURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */; };
 		C9CDCE2C16BA531200E17B23 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2B16BA531200E17B23 /* UIKit.framework */; };
 		C9CDCE2E16BA531200E17B23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2D16BA531200E17B23 /* Foundation.framework */; };
 		C9CDCE3016BA531200E17B23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2F16BA531200E17B23 /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C90FEBF816BACABB00119BC2 /* NEHURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHURLProtocol.h; path = Classes/Bridge/NEHURLProtocol.h; sourceTree = "<group>"; };
+		C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHURLProtocol.m; path = Classes/Bridge/NEHURLProtocol.m; sourceTree = "<group>"; };
 		C9CDCE2816BA531200E17B23 /* iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CDCE2B16BA531200E17B23 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C9CDCE2D16BA531200E17B23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +149,8 @@
 			children = (
 				C9CDCE5516BA53A000E17B23 /* NEHUIWebView.h */,
 				C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */,
+				C90FEBF816BACABB00119BC2 /* NEHURLProtocol.h */,
+				C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */,
 			);
 			name = Bridge;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				C9CDCE3C16BA531200E17B23 /* AppDelegate.m in Sources */,
 				C9CDCE4516BA531200E17B23 /* ViewController.m in Sources */,
 				C9CDCE5716BA53A000E17B23 /* NEHUIWebView.m in Sources */,
+				C90FEBFA16BACABB00119BC2 /* NEHURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +358,7 @@
 				C9CDCE5016BA531200E17B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
