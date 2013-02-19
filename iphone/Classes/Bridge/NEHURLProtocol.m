@@ -14,7 +14,10 @@
 {
     NSString* urlString = [[theRequest URL] absoluteString];
     BOOL result = [urlString hasPrefix:@"neh"];
-    NSLog(@"%@",urlString);
+    if(result){
+        //
+    }
+    NSLog(@"canInitWithRequest: %@",urlString);
     return NO;
 }
 - (void)startLoading

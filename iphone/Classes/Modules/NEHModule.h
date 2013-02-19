@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NEHArgument.h"
+#import "NEHResult.h"
+#import "NEHModuleDelegate.h"
 
-@interface NEHModule : NSObject
-
+@interface NEHModule : NSObject{
+    NEHModuleDelegate* _moduleDelegate;
+}
+-(void)success;
 @end

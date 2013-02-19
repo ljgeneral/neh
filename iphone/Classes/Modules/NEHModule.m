@@ -9,5 +9,7 @@
 #import "NEHModule.h"
 
 @implementation NEHModule
-
+-(void)success{
+    //_moduleDelegate
+}
 @end
