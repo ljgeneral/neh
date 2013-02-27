@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NEHArgument : NSObject
-
+@interface NEHArgument : NSObject{
+}
+@property(retain) NSString* callbackId;
+@property(retain) NSMutableArray *arguments;
+-(NEHArgument*) initWithCallbackId:(NSString *)callbackId
+                methodArugments:(NSMutableArray*)methodArugments;
 @end

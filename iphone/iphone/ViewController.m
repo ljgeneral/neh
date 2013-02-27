@@ -17,12 +17,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    webView = [[NEHUIWebView alloc] initWithFrame:CGRectMake(0, 0, 10, 1)];
+    webView = [[NEHUIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [[self view] addSubview:webView];
 	// Do any additional setup after loading the view, typically from a nib.
     NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
     NSURL *appURL = [NSURL fileURLWithPath:startPage];
     NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
     [webView loadRequest:appReq];
+    
 }
 
 - (void)didReceiveMemoryWarning

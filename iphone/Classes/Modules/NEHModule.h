@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "NEHArgument.h"
 #import "NEHResult.h"
-#import "NEHModuleDelegate.h"
+#import "NEHHost.h"
 
+@class NEHHost;
 @interface NEHModule : NSObject{
-    NEHModuleDelegate* _moduleDelegate;
+    //
 }
+@property(nonatomic,retain) NEHHost * host;
+-(id)initWithHost:(NEHHost *)host;
+-(NSString *)executeJs:(NSString *)js;
 -(void)success;
+-(void)buildResult:(NEHResult *)result
+        callbackId:(NSString *)callbackId
+          noDelete:(BOOL)noDelete;
 @end

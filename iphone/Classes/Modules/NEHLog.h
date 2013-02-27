@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NEHModule.h"
 
+@class NEHModule;
 @interface NEHLog : NEHModule
-
+-(void)write:(NEHArgument *)argument;
 @end

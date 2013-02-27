@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NEHHostManager.h"
 #import "NEHURLProtocol.h"
 
 @interface NEHUIWebView : UIWebView<UIWebViewDelegate>

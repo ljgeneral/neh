@@ -2,18 +2,43 @@
 <html>
 	<head>
 		<title>NEH Test</title>
-		<meta charset="utf-8"> 
+		<meta charset="utf-8">
+        <style>
+            body{background:#000}
+        </style>
 	</head>
 	<body>
 		<div>123456789</div>
+        <button onclick="TestNEH()">Test NEH</button>
 		<script type="text/javascript">
-			alert('12345');
-			var _iframe = document.createElement('IFRAME');
-			document.body.appendChild(_iframe);
-            _iframe.src="neh://aaa.bbb";
-            var _xhr = new XMLHttpRequest();
-            _xhr.open('GET','neh://xxx/xxxx');
-            _xhr.send();
+			var neh={};
+            var callback={'xxx':function(){alert('abc')}};
+            var Commands = [{
+                            className:'NEHLog',
+                            methodName:'write',
+                            callbackId:'xxx',
+                            arguments:['This is a log']
+                            }];
+            neh.fetchCommands = function(){
+                var returnValue = Commands;
+                if(returnValue){
+                    Commands=null;
+                }
+                return returnValue?JSON.stringify(returnValue):'';
+            };
+            neh.callback = function(callbackId,result,noDelete){
+                alert('xxxx');
+                callback[callbackId](result);
+                if(noDelete)delete callback[callbackId];
+            }
+            function TestNEH(){
+                //var _iframe = document.createElement('IFRAME');
+                //document.body.appendChild(_iframe);
+                //_iframe.src="neh://aaa.bbb";
+                var _xhr = new XMLHttpRequest();
+                _xhr.open('HEAD','neh://xxx/xxxx',true);
+                _xhr.send(null);
+            }
 		</script>
 	</body>
 </html>

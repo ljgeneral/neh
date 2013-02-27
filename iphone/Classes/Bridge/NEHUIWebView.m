@@ -15,18 +15,17 @@
     if(self){
         self.delegate = self;
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
+        [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:self]  forKey:@"aaa"];
     }
     return self;
 }
-
 
 #pragma mark WebView Delegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-	NSURL * newUrl = [request URL];
-	
-    NSLog(@"xxxxxx%@",[newUrl absoluteString]);
+	//NSURL * newUrl = [request URL];
+	//NEHHost *host = [[NEHHost alloc] initWithWebViewContext:@"aaa"];
 	//It's likely to fail, but that way we pass it on to error handling.
 	return YES;
 }

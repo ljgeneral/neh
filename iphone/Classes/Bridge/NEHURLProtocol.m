@@ -15,16 +15,11 @@
     NSString* urlString = [[theRequest URL] absoluteString];
     BOOL result = [urlString hasPrefix:@"neh"];
     if(result){
-        //
+        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:@"aaa"];
+        [host performSelectorOnMainThread:@selector(getCommandsFromJs) withObject:nil waitUntilDone:NO];
     }
     NSLog(@"canInitWithRequest: %@",urlString);
     return NO;
 }
-- (void)startLoading
-{
-    NSLog(@"in startLoading");
-	id<NSURLProtocolClient> client = [self client];
-    NSURLRequest *request = [self request];
-	NSURL *url = [request URL];
-}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NEHHostManager.h"
 
 @interface NEHURLProtocol : NSURLProtocol
 
