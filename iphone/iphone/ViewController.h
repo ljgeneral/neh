@@ -10,7 +10,8 @@
 #import "NEHUIWebView.h"
 
 @interface ViewController : UIViewController{
-    NEHUIWebView *webView;
+    NEHUIWebView *webView1;
+    NEHUIWebView *webView2;
 }
 
 

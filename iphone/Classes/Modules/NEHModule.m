@@ -14,13 +14,9 @@
     self.host = theHost;
     return self;
 };
--(void)success{
-    //_moduleDelegate
-}
--(void)buildResult:(NEHResult *)result
-        callbackId:(NSString *)callbackId
-          noDelete:(BOOL)noDelete
+-(void)successResult:(NEHResult *)result
+          callbackId:(NSString *)callbackId
 {
-    [self.host callbackToJs:callbackId result:[result.data cdvjk_JSONString] noDelete:noDelete];
+    [self.host callbackToJs:callbackId result:[result resultWithString] keepCallback:@"true"];
 }
 @end

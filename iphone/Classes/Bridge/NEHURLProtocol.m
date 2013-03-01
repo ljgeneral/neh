@@ -12,14 +12,14 @@
 
 + (BOOL)canInitWithRequest:(NSURLRequest*)theRequest
 {
-    NSString* urlString = [[theRequest URL] absoluteString];
-    BOOL result = [urlString hasPrefix:@"neh"];
-    if(result){
-        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:@"aaa"];
+    NSURL *requestUrl = [theRequest URL];
+    if([[requestUrl scheme] isEqualToString:@"neh"]){
+        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[[requestUrl resourceSpecifier] substringFromIndex:2] ];
         [host performSelectorOnMainThread:@selector(getCommandsFromJs) withObject:nil waitUntilDone:NO];
     }
-    NSLog(@"canInitWithRequest: %@",urlString);
+    NSLog(@"canInitWithRequest: %@",theRequest.URL.absoluteString);
     return NO;
 }
+
 
 @end

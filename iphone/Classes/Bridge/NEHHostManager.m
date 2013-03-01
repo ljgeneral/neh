@@ -10,7 +10,7 @@
 
 @implementation NEHHostManager
 static NEHHostManager* singleton;
-static NSString* LOCK = @"Whatever";
+static NSString* LOCK = @"shit";
 +(NEHHostManager*) sharedInstance{
     @synchronized(LOCK){
         if(singleton == nil){

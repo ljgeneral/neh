@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NEHModule.h"
 
-@interface NEHDevice : NSObject
+@class NEHModule;
+@interface NEHDevice : NEHModule
+-(void)getDeviceInfo:(NEHArgument *)nehArgument;
 
 @end

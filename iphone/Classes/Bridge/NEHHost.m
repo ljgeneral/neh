@@ -12,7 +12,7 @@
 @synthesize webView=_webView;
 -(NEHHost*)initWithWebView:(NEHUIWebView *)theWebView{
     self.webView=theWebView;
-    return (self);
+    return self;
 }
 -(NSString *)evalJs:(NSString *)js{
     return [self.webView stringByEvaluatingJavaScriptFromString:js];
@@ -20,12 +20,14 @@
 -(void)getCommandsFromJs{
     NSString* tmp = [self evalJs:@"neh.fetchCommands()"];
     NSArray* temArray = [tmp cdvjk_mutableObjectFromJSONString];
-   [[[NEHCommand alloc] initWithJSON:[[temArray objectAtIndex:0] cdvjk_JSONString] host:self] executeCommand];
+    for(NSInteger i=0;i<[temArray count];i++){
+        [[[NEHCommand alloc] initWithJSON:[[temArray objectAtIndex:i] cdvjk_JSONString] host:self] executeCommand];
+    }
 }
 -(void)callbackToJs:(NSString *)callbackId
-             result:(NSString*)result
-           noDelete:(BOOL)noDelete
+             result:(NSString *)result
+       keepCallback:(NSString *)keepCallback
 {
-    [self evalJs:[NSString stringWithFormat:@"neh.callback('%@','%@','%@')",callbackId,result,noDelete]];
+    [self evalJs:[NSString stringWithFormat:@"neh.callback('%@','%@','%@')",callbackId,result,keepCallback]];
 }
 @end

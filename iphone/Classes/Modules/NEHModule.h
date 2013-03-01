@@ -17,9 +17,6 @@
 }
 @property(nonatomic,retain) NEHHost * host;
 -(id)initWithHost:(NEHHost *)host;
--(NSString *)executeJs:(NSString *)js;
--(void)success;
--(void)buildResult:(NEHResult *)result
-        callbackId:(NSString *)callbackId
-          noDelete:(BOOL)noDelete;
+-(void)successResult:(NEHResult *)result
+          callbackId:(NSString *)callbackId;
 @end

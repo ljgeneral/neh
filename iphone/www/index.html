@@ -4,21 +4,36 @@
 		<title>NEH Test</title>
 		<meta charset="utf-8">
         <style>
-            body{background:#000}
+            html,body{margin:0;padding:0;height:100%;width:100%}
+            body{border:1px solid #000;;background:#FFF}
+            #ipt{width:100%;height:100px}
         </style>
 	</head>
 	<body>
-		<div>123456789</div>
-        <button onclick="TestNEH()">Test NEH</button>
+        <p>输入日志内容</p>
+		<textarea id="ipt"></textarea>
+        <button onclick="writeLog()">写日志</button>
+        <button onclick="getDeviceInfo()">获取设备信息</button>
 		<script type="text/javascript">
 			var neh={};
-            var callback={'xxx':function(){alert('abc')}};
+            var callback={'xxx':function(){alert('abc')},
+                          'xxxx':function(result){
+                              alert('name:'+JSON.parse(result).data.name)
+                          }
+            };
             var Commands = [{
                             className:'NEHLog',
                             methodName:'write',
                             callbackId:'xxx',
                             arguments:['This is a log']
-                            }];
+                            },
+                            {
+                            className:'NEHDevice',
+                            methodName:'getDeviceInfo',
+                            callbackId:'xxxx',
+                            arguments:[]
+                            }
+                            ];
             neh.fetchCommands = function(){
                 var returnValue = Commands;
                 if(returnValue){
@@ -26,19 +41,41 @@
                 }
                 return returnValue?JSON.stringify(returnValue):'';
             };
-            neh.callback = function(callbackId,result,noDelete){
-                alert('xxxx');
+            neh.callback = function(callbackId,result,keepCallback){
                 callback[callbackId](result);
-                if(noDelete)delete callback[callbackId];
+                if(!keepCallback)delete callback[callbackId];
             }
-            function TestNEH(){
-                //var _iframe = document.createElement('IFRAME');
-                //document.body.appendChild(_iframe);
-                //_iframe.src="neh://aaa.bbb";
+            function callNative(){
                 var _xhr = new XMLHttpRequest();
-                _xhr.open('HEAD','neh://xxx/xxxx',true);
+                _xhr.open('HEAD','neh://'+window.WEBVIEW_KEY,true);
                 _xhr.send(null);
             }
+            function writeLog(){
+                Commands = [{
+                            className:'NEHLog',
+                            methodName:'write',
+                            callbackId:'xxx',
+                            arguments:[document.getElementById('ipt').value]
+                            }];
+                callNative();
+            }
+            function getDeviceInfo(){
+                Commands = [{
+                            className:'NEHDevice',
+                            methodName:'getDeviceInfo',
+                            callbackId:'xxxx',
+                            arguments:[]
+                            }
+                            ];
+                callNative();
+                
+            }
+            document.addEventListener('DOMContentLoaded',function(){
+                                        var _iframe = document.createElement('IFRAME');
+                                        _iframe.style.display = 'none';
+                                        document.body.appendChild(_iframe);
+                                        _iframe.src="neh://ready";
+                                      });
 		</script>
 	</body>
 </html>

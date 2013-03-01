@@ -17,5 +17,5 @@
 -(void)getCommandsFromJs;
 -(void)callbackToJs:(NSString *)callbackId
              result:(NSString *)result
-           noDelete:(BOOL)noDelete;
+       keepCallback:(NSString *)keepCallback;
 @end

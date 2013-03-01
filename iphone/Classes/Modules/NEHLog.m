@@ -12,6 +12,5 @@
 -(void)write:(NEHArgument* )nehArgument{
     NSString* message = [nehArgument.arguments objectAtIndex:0];
     NSLog(message);
-    [self buildResult:[[NEHResult alloc] init] callbackId:nehArgument.callbackId noDelete:false];
 }
 @end
