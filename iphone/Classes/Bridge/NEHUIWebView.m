@@ -13,8 +13,7 @@
 @end
 @implementation NEHUIWebView
 @synthesize webView=_webView;
-- (UIWebView*)webView
-{
+- (UIWebView *)webView{
 	if (_webView==nil)
 	{
 		_webView = [[UIWebView alloc] initWithFrame:self.bounds];
@@ -27,8 +26,7 @@
 	}
 	return _webView;
 }
-- (void)dealloc
-{
+- (void)dealloc{
 	if (self.webView!=nil)
 	{
         //recycle host
@@ -55,8 +53,7 @@ textEncodingName:(NSString *)textEncodingName
          baseURL:(NSURL *)baseURL{
     [self loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
-- (UIScrollView *)scrollview
-{
+- (UIScrollView *)scrollview{
 	if ([self.webView respondsToSelector:@selector(scrollView)]) {
 		// as of iOS 5.0, we can return the scroll view
 		return [self.webView scrollView];
@@ -70,8 +67,7 @@ textEncodingName:(NSString *)textEncodingName
 	}
 	return nil;
 }
-- (CGFloat)contentHeightForWidth:(CGFloat)value
-{
+- (CGFloat)contentHeightForWidth:(CGFloat)value{
     CGRect oldBounds = [[self webview] bounds];
     BOOL oldVal = self.webView.scalesPageToFit;
     [self.webView setScalesPageToFit:NO];
@@ -93,7 +89,7 @@ textEncodingName:(NSString *)textEncodingName
     return ret;
 }
 - (id)url{
-	NSString * result =[[[self.webView request] URL] absoluteString];
+	NSString *result =[[[self.webView request] URL] absoluteString];
 	if (result!=nil)
 	{
 		return result;
@@ -125,20 +121,17 @@ textEncodingName:(NSString *)textEncodingName
 	return [self.webView isLoading];
 }
 
-- (BOOL)canGoBack
-{
+- (BOOL)canGoBack{
 	return [self.webView canGoBack];
 }
 
-- (BOOL)canGoForward
-{
+- (BOOL)canGoForward{
 	return [self.webView canGoForward];
 }
 
 #pragma mark WebView Delegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     if ([[[request URL] absoluteString] isEqualToString:@"neh://ready"]) {
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
         NSString *webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
@@ -148,8 +141,7 @@ textEncodingName:(NSString *)textEncodingName
     }
 	return YES;
 }
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
     [webView setNeedsDisplay];
 }
 

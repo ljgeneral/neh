@@ -9,10 +9,9 @@
 #import "NEHHostManager.h"
 
 @implementation NEHHostManager
-static NEHHostManager* singleton;
-static NSString* LOCK = @"shit";
-+ (NEHHostManager*) sharedInstance
-{
+static NEHHostManager *singleton;
+static NSString *LOCK = @"shit";
++ (NEHHostManager *) sharedInstance{
   @synchronized(LOCK){
     if(singleton == nil){
       singleton = [[NEHHostManager alloc] init];
@@ -21,17 +20,14 @@ static NSString* LOCK = @"shit";
   return singleton;
 };
 - (void)addHost:(NEHHost *)host
-         forKey:(NSString *)key
-{
+         forKey:(NSString *)key{
   if(_pool==nil)_pool = [[NSMutableDictionary alloc] initWithCapacity:100];
   [_pool setValue:host forKey:key];
 };
-- (void)removeHostForKey:(NSString *)key
-{
+- (void)removeHostForKey:(NSString *)key{
   [_pool removeObjectForKey:key];
 };
-- (NEHHost*)getHostForKey:(NSString *)key
-{
+- (NEHHost *)getHostForKey:(NSString *)key{
   return [_pool valueForKey:key];
 };
 @end

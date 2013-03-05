@@ -11,9 +11,9 @@
 #import "NEHCommand.h"
 
 @interface NEHHost : NSObject
-@property NEHUIWebView* webView;
-- (NEHHost*)initWithWebView:(NEHUIWebView *)webView;
-- (NSString*)evalJs:(NSString *)js;
+@property NEHUIWebView *webView;
+- (NEHHost *)initWithWebView:(NEHUIWebView *)webView;
+- (NSString *)evalJs:(NSString *)js;
 - (void)getCommandsFromJs;
 - (void)callbackToJs:(NSString *)callbackId
               result:(NSString *)result
