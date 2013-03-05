@@ -9,12 +9,11 @@
 #import "NEHDevice.h"
 
 @implementation NEHDevice
--(void)getDeviceInfo:(NEHArgument *)nehArgument{
+- (void)getDeviceInfo:(NEHArgument *)nehArgument{
     NEHResult *result = [[NEHResult alloc] initWithSuccessData:[self deviceProperties]];
     [self successResult:result callbackId:nehArgument.callbackId];
 };
-- (NSDictionary*)deviceProperties
-{
+- (NSDictionary *)deviceProperties{
     UIDevice* device = [UIDevice currentDevice];
     NSMutableDictionary* devProps = [NSMutableDictionary dictionaryWithCapacity:4];
     

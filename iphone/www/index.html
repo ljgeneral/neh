@@ -14,68 +14,7 @@
 		<textarea id="ipt"></textarea>
         <button onclick="writeLog()">写日志</button>
         <button onclick="getDeviceInfo()">获取设备信息</button>
-		<script type="text/javascript">
-			var neh={};
-            var callback={'xxx':function(){alert('abc')},
-                          'xxxx':function(result){
-                              alert('name:'+JSON.parse(result).data.name)
-                          }
-            };
-            var Commands = [{
-                            className:'NEHLog',
-                            methodName:'write',
-                            callbackId:'xxx',
-                            arguments:['This is a log']
-                            },
-                            {
-                            className:'NEHDevice',
-                            methodName:'getDeviceInfo',
-                            callbackId:'xxxx',
-                            arguments:[]
-                            }
-                            ];
-            neh.fetchCommands = function(){
-                var returnValue = Commands;
-                if(returnValue){
-                    Commands=null;
-                }
-                return returnValue?JSON.stringify(returnValue):'';
-            };
-            neh.callback = function(callbackId,result,keepCallback){
-                callback[callbackId](result);
-                if(!keepCallback)delete callback[callbackId];
-            }
-            function callNative(){
-                var _xhr = new XMLHttpRequest();
-                _xhr.open('HEAD','neh://'+window.WEBVIEW_KEY,true);
-                _xhr.send(null);
-            }
-            function writeLog(){
-                Commands = [{
-                            className:'NEHLog',
-                            methodName:'write',
-                            callbackId:'xxx',
-                            arguments:[document.getElementById('ipt').value]
-                            }];
-                callNative();
-            }
-            function getDeviceInfo(){
-                Commands = [{
-                            className:'NEHDevice',
-                            methodName:'getDeviceInfo',
-                            callbackId:'xxxx',
-                            arguments:[]
-                            }
-                            ];
-                callNative();
-                
-            }
-            document.addEventListener('DOMContentLoaded',function(){
-                                        var _iframe = document.createElement('IFRAME');
-                                        _iframe.style.display = 'none';
-                                        document.body.appendChild(_iframe);
-                                        _iframe.src="neh://ready";
-                                      });
-		</script>
+        <script src="http://192.168.144.11/product/nej_iosweb_20130201/src/define.js"></script>
+        <script src="index.js"></script>
 	</body>
 </html>

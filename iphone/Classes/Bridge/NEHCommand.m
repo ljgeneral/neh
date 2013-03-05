@@ -14,7 +14,8 @@
 @synthesize methodName=_methodName;
 @synthesize callbackId=_callbackId;
 @synthesize arguments=_arguments;
--(NEHCommand *)initWithJSON:(NSString *)json host:(NEHHost*)theHost{
+- (NEHCommand *)initWithJSON:(NSString *)json
+                        host:(NEHHost*)theHost{
     NSDictionary* tmpDictionary = [json cdvjk_mutableObjectFromJSONString];
     self.className = [tmpDictionary valueForKey:@"className"];
     self.methodName = [tmpDictionary valueForKey:@"methodName"];
@@ -23,7 +24,7 @@
     self.host=theHost;
     return self;
 }
--(NEHCommand *)executeCommand{
+- (NEHCommand *)executeCommand{
     NEHModule *obj = [[NSClassFromString (self.className)alloc] initWithHost:self.host];
     SEL normalSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:", self.methodName]);
     NEHArgument* argument=[[NEHArgument alloc] initWithCallbackId:self.callbackId

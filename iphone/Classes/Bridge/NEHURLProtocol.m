@@ -17,7 +17,6 @@
         NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[[requestUrl resourceSpecifier] substringFromIndex:2] ];
         [host performSelectorOnMainThread:@selector(getCommandsFromJs) withObject:nil waitUntilDone:NO];
     }
-    NSLog(@"canInitWithRequest: %@",theRequest.URL.absoluteString);
     return NO;
 }
 

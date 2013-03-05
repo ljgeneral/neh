@@ -13,11 +13,11 @@
 @class NEHHost;
 @class NEHUIWebView;
 @interface NEHCommand : NSObject{}
-@property(nonatomic,retain) NEHHost * host;
-@property(nonatomic,retain) NSString * className;
-@property(nonatomic,retain) NSString * methodName;
-@property(nonatomic,retain) NSString * callbackId;
-@property(nonatomic,retain) NSMutableArray *arguments;
--(NEHCommand *)initWithJSON:(NSString *)json host:(NEHHost*)theHost;
--(NEHCommand *)executeCommand;
+@property(nonatomic,strong) NEHHost * host;
+@property(nonatomic,strong) NSString * className;
+@property(nonatomic,strong) NSString * methodName;
+@property(nonatomic,strong) NSString * callbackId;
+@property(nonatomic,strong) NSMutableArray *arguments;
+- (NEHCommand *)initWithJSON:(NSString *)json host:(NEHHost*)theHost;
+- (NEHCommand *)executeCommand;
 @end

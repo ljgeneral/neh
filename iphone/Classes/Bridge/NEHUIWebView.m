@@ -9,11 +9,11 @@
 #import "NEHUIWebView.h"
 
 @interface NEHUIWebView()
-//@property UIWebView *webView;
+@property (nonatomic) UIWebView *webView;
 @end
 @implementation NEHUIWebView
 @synthesize webView=_webView;
--(UIWebView*)webView
+- (UIWebView*)webView
 {
 	if (_webView==nil)
 	{
@@ -27,7 +27,7 @@
 	}
 	return _webView;
 }
--(void)dealloc
+- (void)dealloc
 {
 	if (self.webView!=nil)
 	{
@@ -45,21 +45,24 @@
 - (void)loadRequest:(NSURLRequest *)request{
     [self.webView loadRequest:request];
 }
-- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL{
+- (void)loadHTMLString:(NSString *)string
+               baseURL:(NSURL *)baseURL{
     [self.webView loadHTMLString:string baseURL:baseURL];
 };
-- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL{
+- (void)loadData:(NSData *)data
+        MIMEType:(NSString *)MIMEType
+textEncodingName:(NSString *)textEncodingName
+         baseURL:(NSURL *)baseURL{
     [self loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
--(UIScrollView*)scrollview
+- (UIScrollView *)scrollview
 {
-	UIWebView* webView = [self webview];
-	if ([webView respondsToSelector:@selector(scrollView)]) {
+	if ([self.webView respondsToSelector:@selector(scrollView)]) {
 		// as of iOS 5.0, we can return the scroll view
-		return [webView scrollView];
+		return [self.webView scrollView];
 	} else {
 		// in earlier versions, we need to find the scroll view
-		for (id subview in [webView subviews]) {
+		for (id subview in [self.webView subviews]) {
 			if ([subview isKindOfClass:[UIScrollView class]]) {
 				return (UIScrollView*)subview;
 			}
@@ -67,7 +70,7 @@
 	}
 	return nil;
 }
--(CGFloat)contentHeightForWidth:(CGFloat)value
+- (CGFloat)contentHeightForWidth:(CGFloat)value
 {
     CGRect oldBounds = [[self webview] bounds];
     BOOL oldVal = self.webView.scalesPageToFit;
@@ -79,8 +82,7 @@
     return ret;
 }
 
--(CGFloat)contentWidthForWidth:(CGFloat)value
-{
+- (CGFloat)contentWidthForWidth:(CGFloat)value{
     CGRect oldBounds = [[self webview] bounds];
     BOOL oldVal = self.webView.scalesPageToFit;
     [self.webView setScalesPageToFit:NO];
@@ -90,8 +92,7 @@
     [self.webView setScalesPageToFit:oldVal];
     return ret;
 }
--(id)url
-{
+- (id)url{
 	NSString * result =[[[self.webView request] URL] absoluteString];
 	if (result!=nil)
 	{
@@ -100,41 +101,36 @@
 	return self.url;
 }
 
--(NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)code{
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)code{
     return [[self webView] stringByEvaluatingJavaScriptFromString:code];
 }
 
-- (void)reload
-{
+- (void)reload{
 	[self.webView reload];
 }
 
-- (void)stopLoading
-{
+- (void)stopLoading{
 	[self.webView stopLoading];
 }
 
-- (void)goBack
-{
+- (void)goBack{
 	[self.webView goBack];
 }
 
-- (void)goForward
-{
+- (void)goForward{
 	[self.webView goForward];
 }
 
--(BOOL)isLoading
-{
+- (BOOL)isLoading{
 	return [self.webView isLoading];
 }
 
--(BOOL)canGoBack
+- (BOOL)canGoBack
 {
 	return [self.webView canGoBack];
 }
 
--(BOOL)canGoForward
+- (BOOL)canGoForward
 {
 	return [self.webView canGoForward];
 }
@@ -143,11 +139,10 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    NSLog(@"%@",[request URL]);
     if ([[[request URL] absoluteString] isEqualToString:@"neh://ready"]) {
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
         NSString *webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
-        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.WEBVIEW_KEY='%@'",webViewKey]];
+        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",webViewKey]];
         [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:webView]  forKey:webViewKey];
         return NO;
     }

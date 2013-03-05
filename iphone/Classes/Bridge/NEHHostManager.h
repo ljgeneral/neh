@@ -13,8 +13,9 @@
 @interface NEHHostManager : NSObject{
     NSMutableDictionary * _pool;
 }
--(void)addHost:(NEHHost*)host forKey:(NSString*)key;
--(void)removeHostForKey:(NSString*)key;
--(NEHHost*)getHostForKey:(NSString*)key;
+- (void)addHost:(NEHHost*)host
+         forKey:(NSString*)key;
+- (void)removeHostForKey:(NSString*)key;
+- (NEHHost*)getHostForKey:(NSString*)key;
 
 @end

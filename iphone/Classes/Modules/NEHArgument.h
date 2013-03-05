@@ -10,8 +10,8 @@
 
 @interface NEHArgument : NSObject{
 }
-@property(nonatomic,retain) NSString* callbackId;
-@property(nonatomic,retain) NSMutableArray *arguments;
+@property(nonatomic,strong) NSString* callbackId;
+@property(nonatomic,strong) NSMutableArray *arguments;
 -(NEHArgument*) initWithCallbackId:(NSString *)callbackId
-                methodArugments:(NSMutableArray*)methodArugments;
+                methodArugments:(NSMutableArray *)methodArugments;
 @end

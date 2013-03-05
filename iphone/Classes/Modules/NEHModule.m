@@ -10,12 +10,13 @@
 
 @implementation NEHModule
 @synthesize host=_host;
--(id)initWithHost:(NEHHost *)theHost{
+- (id)initWithHost:(NEHHost *)theHost
+{
     self.host = theHost;
     return self;
 };
--(void)successResult:(NEHResult *)result
-          callbackId:(NSString *)callbackId
+- (void)successResult:(NEHResult *)result
+           callbackId:(NSString *)callbackId
 {
     [self.host callbackToJs:callbackId result:[result resultWithString] keepCallback:@"true"];
 }

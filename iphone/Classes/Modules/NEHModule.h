@@ -15,8 +15,8 @@
 @interface NEHModule : NSObject{
     //
 }
-@property(nonatomic,retain) NEHHost * host;
--(id)initWithHost:(NEHHost *)host;
--(void)successResult:(NEHResult *)result
-          callbackId:(NSString *)callbackId;
+@property(nonatomic,strong) NEHHost *host;
+- (id)initWithHost:(NEHHost *)host;
+- (void)successResult:(NEHResult *)result
+           callbackId:(NSString *)callbackId;
 @end
