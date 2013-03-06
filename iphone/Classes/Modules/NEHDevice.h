@@ -11,6 +11,6 @@
 
 @class NEHModule;
 @interface NEHDevice : NEHModule
-- (void)getDeviceInfo:(NEHArgument *)nehArgument;
+- (void)getDeviceInfo:(NEHArgument*)nehArgument;
 
 @end

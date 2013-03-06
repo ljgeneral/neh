@@ -9,11 +9,11 @@
 #import "NEHUIWebView.h"
 
 @interface NEHUIWebView()
-@property (nonatomic) UIWebView *webView;
+@property (nonatomic) UIWebView* webView;
 @end
 @implementation NEHUIWebView
 @synthesize webView=_webView;
-- (UIWebView *)webView{
+- (UIWebView*)webView{
 	if (_webView==nil)
 	{
 		_webView = [[UIWebView alloc] initWithFrame:self.bounds];
@@ -30,7 +30,7 @@
 	if (self.webView!=nil)
 	{
         //recycle host
-        NSString *webViewKey = [self.webView stringByEvaluatingJavaScriptFromString:@"return window.WEBVIEW_KEY"];
+        NSString* webViewKey = [self.webView stringByEvaluatingJavaScriptFromString:@"return window.WEBVIEW_KEY"];
         [[NEHHostManager sharedInstance] removeHostForKey:webViewKey];
 		self.webView = nil;
 		if (self.webView.loading)
@@ -40,20 +40,20 @@
 	}
 	[super dealloc];
 }
-- (void)loadRequest:(NSURLRequest *)request{
+- (void)loadRequest:(NSURLRequest*)request{
     [self.webView loadRequest:request];
 }
-- (void)loadHTMLString:(NSString *)string
-               baseURL:(NSURL *)baseURL{
+- (void)loadHTMLString:(NSString*)string
+               baseURL:(NSURL*)baseURL{
     [self.webView loadHTMLString:string baseURL:baseURL];
 };
-- (void)loadData:(NSData *)data
-        MIMEType:(NSString *)MIMEType
-textEncodingName:(NSString *)textEncodingName
-         baseURL:(NSURL *)baseURL{
+- (void)loadData:(NSData*)data
+        MIMEType:(NSString*)MIMEType
+textEncodingName:(NSString*)textEncodingName
+         baseURL:(NSURL*)baseURL{
     [self loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
-- (UIScrollView *)scrollview{
+- (UIScrollView*)scrollview{
 	if ([self.webView respondsToSelector:@selector(scrollView)]) {
 		// as of iOS 5.0, we can return the scroll view
 		return [self.webView scrollView];
@@ -97,7 +97,7 @@ textEncodingName:(NSString *)textEncodingName
 	return self.url;
 }
 
-- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)code{
+- (NSString*)stringByEvaluatingJavaScriptFromString:(NSString *)code{
     return [[self webView] stringByEvaluatingJavaScriptFromString:code];
 }
 
@@ -131,17 +131,17 @@ textEncodingName:(NSString *)textEncodingName
 
 #pragma mark WebView Delegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType{
     if ([[[request URL] absoluteString] isEqualToString:@"neh://ready"]) {
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
-        NSString *webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
+        NSString* webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
         [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",webViewKey]];
         [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:webView]  forKey:webViewKey];
         return NO;
     }
 	return YES;
 }
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
+- (void)webViewDidFinishLoad:(UIWebView*)webView{
     [webView setNeedsDisplay];
 }
 

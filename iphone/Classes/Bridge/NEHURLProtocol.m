@@ -10,10 +10,10 @@
 
 @implementation NEHURLProtocol
 
-+ (BOOL)canInitWithRequest:(NSURLRequest *)theRequest{
-    NSURL *requestUrl = [theRequest URL];
++ (BOOL)canInitWithRequest:(NSURLRequest*)theRequest{
+    NSURL* requestUrl = [theRequest URL];
     if([[requestUrl scheme] isEqualToString:@"neh"]){
-        NEHHost *host = [[NEHHostManager sharedInstance] getHostForKey:[[requestUrl resourceSpecifier] substringFromIndex:2] ];
+        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[[requestUrl resourceSpecifier] substringFromIndex:2] ];
         [host performSelectorOnMainThread:@selector(getCommandsFromJs) withObject:nil waitUntilDone:NO];
     }
     return NO;

@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface NEHResult : NSObject
-@property (nonatomic,strong) NSString *code;
-@property (nonatomic,strong) NSString *message;
-@property (nonatomic,strong) NSMutableDictionary *data;
--(NEHResult *)initWithCode:(NSString *)code
-                   message:(NSString *)message
-                    data:(NSMutableDictionary *)data;
--(NEHResult *)initWithSuccessData:(NSMutableDictionary *)data;
--(NSString *)resultWithString;
+@property (nonatomic,strong) NSString* code;
+@property (nonatomic,strong) NSString* message;
+@property (nonatomic,strong) NSMutableDictionary* data;
+-(NEHResult*)initWithCode:(NSString*)code
+                   message:(NSString*)message
+                    data:(NSMutableDictionary*)data;
+-(NEHResult*)initWithSuccessData:(NSMutableDictionary*)data;
+-(NSString*)resultWithString;
 @end

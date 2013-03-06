@@ -9,8 +9,8 @@
 #import "NEHLog.h"
 
 @implementation NEHLog
--(void)write:(NEHArgument *)nehArgument{
-    NSString *message = [nehArgument.arguments objectAtIndex:0];
+-(void)write:(NEHArgument*)nehArgument{
+    NSString* message = [nehArgument.arguments objectAtIndex:0];
     NSLog(message);
 }
 @end

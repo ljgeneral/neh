@@ -10,11 +10,11 @@
 
 @implementation NEHHost
 @synthesize webView=_webView;
-- (NEHHost *)initWithWebView:(NEHUIWebView *)theWebView{
+- (NEHHost*)initWithWebView:(NEHUIWebView*)theWebView{
     self.webView=theWebView;
     return self;
 }
-- (NSString *)evalJs:(NSString *)js{
+- (NSString*)evalJs:(NSString*)js{
     return [self.webView stringByEvaluatingJavaScriptFromString:js];
 };
 - (void)getCommandsFromJs{
@@ -24,9 +24,9 @@
         [[[NEHCommand alloc] initWithJSON:[[commandArray objectAtIndex:i] cdvjk_JSONString] host:self] executeCommand];
     }
 }
- -(void)callbackToJs:(NSString *)callbackId
-              result:(NSString *)result
-        keepCallback:(NSString *)keepCallback{
+ -(void)callbackToJs:(NSString*)callbackId
+              result:(NSString*)result
+        keepCallback:(NSString*)keepCallback{
     [self evalJs:[NSString stringWithFormat:@"neh.callback('%@','%@','%@')",callbackId,result,keepCallback]];
 }
 @end

@@ -12,17 +12,17 @@
 
 @interface NEHUIWebView : UIView<UIWebViewDelegate>
 @property(nonatomic,readonly) id url;
-@property(nonatomic,readonly,strong) NSURLRequest *request;
-@property(nonatomic,readonly,strong) UIScrollView *scrollView NS_AVAILABLE_IOS(5_0);
+@property(nonatomic,readonly,strong) NSURLRequest* request;
+@property(nonatomic,readonly,strong) UIScrollView* scrollView NS_AVAILABLE_IOS(5_0);
 
-- (void)loadRequest:(NSURLRequest *)request;
-- (void)loadHTMLString:(NSString *)string
-               baseURL:(NSURL *)baseURL;
-- (void)loadData:(NSData *)data
-        MIMEType:(NSString *)MIMEType
-textEncodingName:(NSString *)textEncodingName
-         baseURL:(NSURL *)baseURL;
-- (NSString  *)stringByEvaluatingJavaScriptFromString:(NSString *)code;
+- (void)loadRequest:(NSURLRequest*)request;
+- (void)loadHTMLString:(NSString*)string
+               baseURL:(NSURL*)baseURL;
+- (void)loadData:(NSData*)data
+        MIMEType:(NSString*)MIMEType
+textEncodingName:(NSString*)textEncodingName
+         baseURL:(NSURL*)baseURL;
+- (NSString*)stringByEvaluatingJavaScriptFromString:(NSString*)code;
 - (void)stopLoading;
 - (void)goBack;
 - (void)goForward;

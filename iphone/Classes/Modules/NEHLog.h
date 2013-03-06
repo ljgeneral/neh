@@ -11,5 +11,5 @@
 
 @class NEHModule;
 @interface NEHLog : NEHModule
-- (void)write:(NEHArgument *)argument;
+- (void)write:(NEHArgument*)argument;
 @end
