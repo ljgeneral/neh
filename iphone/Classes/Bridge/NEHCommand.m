@@ -24,7 +24,8 @@
     self.host = theHost;
     return self;
 }
-- (NEHCommand*)executeCommand{
+
+- (NEHCommand*)execute{
     NEHModule* obj = [[NSClassFromString (self.className)alloc] initWithHost:self.host];
     SEL normalSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:", self.methodName]);
     NEHArgument* argument=[[NEHArgument alloc] initWithCallbackId:self.callbackId

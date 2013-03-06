@@ -20,5 +20,5 @@
 @property(nonatomic,strong) NSMutableArray* arguments;
 - (NEHCommand*)initWithJSON:(NSString*)json
                         host:(NEHHost*)theHost;
-- (NEHCommand*)executeCommand;
+- (NEHCommand*)execute;
 @end

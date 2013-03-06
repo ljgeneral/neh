@@ -14,7 +14,7 @@
 @synthesize data=_data;
 - (NEHResult*)initWithCode:(NSString*)code
                     message:(NSString*)message
-                       data:(NSMutableDictionary *)data{
+                       data:(NSMutableDictionary*)data{
   
     self.code = code;
     self.message=message;

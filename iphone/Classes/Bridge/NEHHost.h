@@ -15,7 +15,7 @@
 - (NEHHost*)initWithWebView:(NEHUIWebView*)webView;
 - (NSString*)evalJs:(NSString*)js;
 - (void)getCommandsFromJs;
-- (void)callbackToJs:(NSString*)callbackId
-              result:(NSString*)result
-        keepCallback:(NSString*)keepCallback;
+- (void)callbackJsWithCallbackId:(NSString*)callbackId
+                          result:(NSString*)result
+                    keepCallback:(NSString*)keepCallback;
 @end

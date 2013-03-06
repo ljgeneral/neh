@@ -26,6 +26,7 @@
 	}
 	return _webView;
 }
+
 - (void)dealloc{
 	if (self.webView!=nil)
 	{
@@ -40,19 +41,23 @@
 	}
 	[super dealloc];
 }
+
 - (void)loadRequest:(NSURLRequest*)request{
     [self.webView loadRequest:request];
 }
+
 - (void)loadHTMLString:(NSString*)string
                baseURL:(NSURL*)baseURL{
     [self.webView loadHTMLString:string baseURL:baseURL];
-};
+}
+
 - (void)loadData:(NSData*)data
         MIMEType:(NSString*)MIMEType
 textEncodingName:(NSString*)textEncodingName
          baseURL:(NSURL*)baseURL{
     [self loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
+
 - (UIScrollView*)scrollview{
 	if ([self.webView respondsToSelector:@selector(scrollView)]) {
 		// as of iOS 5.0, we can return the scroll view
@@ -67,6 +72,7 @@ textEncodingName:(NSString*)textEncodingName
 	}
 	return nil;
 }
+
 - (CGFloat)contentHeightForWidth:(CGFloat)value{
     CGRect oldBounds = [[self webview] bounds];
     BOOL oldVal = self.webView.scalesPageToFit;
@@ -88,6 +94,7 @@ textEncodingName:(NSString*)textEncodingName
     [self.webView setScalesPageToFit:oldVal];
     return ret;
 }
+
 - (id)url{
 	NSString *result =[[[self.webView request] URL] absoluteString];
 	if (result!=nil)
@@ -141,9 +148,9 @@ textEncodingName:(NSString*)textEncodingName
     }
 	return YES;
 }
+
 - (void)webViewDidFinishLoad:(UIWebView*)webView{
     [webView setNeedsDisplay];
 }
-
 
 @end
