@@ -15,6 +15,7 @@
 		C934988B16BB71FC004A8C62 /* NEHArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988A16BB71FC004A8C62 /* NEHArgument.m */; };
 		C934988E16BB7210004A8C62 /* NEHResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988D16BB7210004A8C62 /* NEHResult.m */; };
 		C934989116BBA64E004A8C62 /* NEHCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C934989016BBA64E004A8C62 /* NEHCommand.m */; };
+		C939EA8D16E7376C0085E7E8 /* NEHNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C939EA8C16E7376C0085E7E8 /* NEHNotification.m */; };
 		C9AC402F16D5D029003B3928 /* NEHDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC402E16D5D029003B3928 /* NEHDevice.m */; };
 		C9CDCE2C16BA531200E17B23 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2B16BA531200E17B23 /* UIKit.framework */; };
 		C9CDCE2E16BA531200E17B23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2D16BA531200E17B23 /* Foundation.framework */; };
@@ -51,6 +52,8 @@
 		C934988D16BB7210004A8C62 /* NEHResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHResult.m; path = Classes/Modules/NEHResult.m; sourceTree = "<group>"; };
 		C934988F16BBA64E004A8C62 /* NEHCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHCommand.h; path = Classes/Bridge/NEHCommand.h; sourceTree = "<group>"; };
 		C934989016BBA64E004A8C62 /* NEHCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHCommand.m; path = Classes/Bridge/NEHCommand.m; sourceTree = "<group>"; };
+		C939EA8B16E7376C0085E7E8 /* NEHNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHNotification.h; path = Classes/Modules/NEHNotification.h; sourceTree = "<group>"; };
+		C939EA8C16E7376C0085E7E8 /* NEHNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHNotification.m; path = Classes/Modules/NEHNotification.m; sourceTree = "<group>"; };
 		C9AC402D16D5D029003B3928 /* NEHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHDevice.h; path = Classes/Modules/NEHDevice.h; sourceTree = "<group>"; };
 		C9AC402E16D5D029003B3928 /* NEHDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHDevice.m; path = Classes/Modules/NEHDevice.m; sourceTree = "<group>"; };
 		C9CDCE2816BA531200E17B23 /* iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +192,8 @@
 				C9AC402D16D5D029003B3928 /* NEHDevice.h */,
 				C9AC402E16D5D029003B3928 /* NEHDevice.m */,
 				C91189AD16DC86250035AA5F /* NEH.h */,
+				C939EA8B16E7376C0085E7E8 /* NEHNotification.h */,
+				C939EA8C16E7376C0085E7E8 /* NEHNotification.m */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				C911CA0D16D75560002D52FD /* NEHHost.m in Sources */,
 				C911CA1116D76AE5002D52FD /* JSONKit.m in Sources */,
 				C9195E0F16DDF97900728E2F /* NEHHostManager.m in Sources */,
+				C939EA8D16E7376C0085E7E8 /* NEHNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

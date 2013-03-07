@@ -5,16 +5,16 @@
 		<meta charset="utf-8">
         <style>
             html,body{margin:0;padding:0;height:100%;width:100%}
+            p{margin:0 5px;line-height:20px}
             body{border:1px solid #000;;background:#FFF}
-            #ipt{width:100%;height:100px}
         </style>
 	</head>
 	<body>
-    <p>输入日志内容</p>
-    <textarea id="ipt"></textarea>
-    <button onclick="writeLog()">写日志</button>
-    <button onclick="getDeviceInfo()">获取设备信息</button>
-    <script src="http://127.0.0.1/~hxl/nej/branches/nej_iosweb_20130201/src/define.js"></script>
+    <p><button onclick="writeLog()">写日志</button></p>
+    <p><button onclick="getDeviceInfo()">获取设备信息</button></p>
+    <p><button onclick="nativeAlert()">alert</button></p>
+    <p><button onclick="nativeConfirm()">confirm</button></p>
+    <script src="http://192.168.144.11/product/nej_iosweb_20130201/src/define.js"></script>
     <script src="index.js"></script>
 	</body>
 </html>

@@ -30,9 +30,9 @@
 - (void)dealloc{
 	if (self.webView!=nil)
 	{
-        //recycle host
-        NSString* webViewKey = [self.webView stringByEvaluatingJavaScriptFromString:@"return window.WEBVIEW_KEY"];
-        [[NEHHostManager sharedInstance] removeHostForKey:webViewKey];
+    //recycle host
+    NSString* webViewKey = [self.webView stringByEvaluatingJavaScriptFromString:@"return window.WEBVIEW_KEY"];
+    [[NEHHostManager sharedInstance] removeHostForKey:webViewKey];
 		self.webView = nil;
 		if (self.webView.loading)
 		{

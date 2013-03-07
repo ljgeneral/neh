@@ -11,8 +11,9 @@
 @implementation NEHDevice
 - (void)getDeviceInfo:(NEHArgument*)nehArgument{
     NEHResult* result = [[NEHResult alloc] initWithSuccessData:[self deviceProperties]];
-    [self successResult:result callbackId:nehArgument.callbackId];
-};
+    [self successWithCallbackId:nehArgument.callbackId result:result];
+}
+
 - (NSDictionary*)deviceProperties{
     UIDevice* device = [UIDevice currentDevice];
     NSMutableDictionary* devProps = [NSMutableDictionary dictionaryWithCapacity:4];

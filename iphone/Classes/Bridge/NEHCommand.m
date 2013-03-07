@@ -17,9 +17,9 @@
 - (NEHCommand*)initWithJSON:(NSString*)json
                         host:(NEHHost*)theHost{
     NSDictionary* tmpDictionary = [json cdvjk_mutableObjectFromJSONString];
-    self.className = [tmpDictionary valueForKey:@"className"];
-    self.methodName = [tmpDictionary valueForKey:@"methodName"];
-    self.callbackId = [tmpDictionary valueForKey:@"callbackId"];
+    self.className = [[tmpDictionary valueForKey:@"className"] copy];
+    self.methodName = [[tmpDictionary valueForKey:@"methodName"] copy];
+    self.callbackId = [[tmpDictionary valueForKey:@"callbackId"] copy];
     self.arguments = [tmpDictionary valueForKey:@"arguments"];
     self.host = theHost;
     return self;
@@ -29,7 +29,7 @@
     NEHModule* obj = [[NSClassFromString (self.className)alloc] initWithHost:self.host];
     SEL normalSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:", self.methodName]);
     NEHArgument* argument=[[NEHArgument alloc] initWithCallbackId:self.callbackId
-                                                  methodArugments:self.arguments];
+                                                        arugments:self.arguments];
     objc_msgSend(obj, normalSelector, argument);
 }
 @end

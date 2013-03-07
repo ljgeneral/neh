@@ -14,9 +14,9 @@
 @class NEHUIWebView;
 @interface NEHCommand : NSObject{}
 @property(nonatomic,strong) NEHHost* host;
-@property(nonatomic,strong) NSString* className;
-@property(nonatomic,strong) NSString* methodName;
-@property(nonatomic,strong) NSString* callbackId;
+@property(nonatomic,copy) NSString* className;
+@property(nonatomic,copy) NSString* methodName;
+@property(nonatomic,copy) NSString* callbackId;
 @property(nonatomic,strong) NSMutableArray* arguments;
 - (NEHCommand*)initWithJSON:(NSString*)json
                         host:(NEHHost*)theHost;

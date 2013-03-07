@@ -14,9 +14,10 @@
 {
     self.host = theHost;
     return self;
-};
-- (void)successResult:(NEHResult*)result
-           callbackId:(NSString*)callbackId
+}
+
+- (void)successWithCallbackId:(NSString*)callbackId
+                       result:(NEHResult*)result
 {
     [self.host callbackJsWithCallbackId:callbackId result:[result resultWithString] keepCallback:@"true"];
 }

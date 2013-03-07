@@ -17,6 +17,6 @@
 }
 @property(nonatomic,strong) NEHHost* host;
 - (id)initWithHost:(NEHHost*)host;
-- (void)successResult:(NEHResult*)result
-           callbackId:(NSString*)callbackId;
+- (void)successWithCallbackId:(NSString*)callbackId
+                       result:(NEHResult*)result;
 @end
