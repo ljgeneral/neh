@@ -3,7 +3,7 @@
 //  iphone
 //
 //  Created by hxl on 13-2-22.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import "NEHHost.h"

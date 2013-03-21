@@ -11,6 +11,9 @@
 		C911CA0D16D75560002D52FD /* NEHHost.m in Sources */ = {isa = PBXBuildFile; fileRef = C911CA0C16D75560002D52FD /* NEHHost.m */; };
 		C911CA1116D76AE5002D52FD /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C911CA1016D76AE5002D52FD /* JSONKit.m */; };
 		C9195E0F16DDF97900728E2F /* NEHHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9195E0E16DDF97900728E2F /* NEHHostManager.m */; };
+		C92B105E16FABBF500131F59 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B105D16FABBF500131F59 /* MainStoryboard.storyboard */; };
+		C92B106116FABEA900131F59 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B106016FABEA900131F59 /* ViewController2.m */; };
+		C92B106416FAE75C00131F59 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B106316FAE75C00131F59 /* ViewController3.m */; };
 		C934988816BB71CF004A8C62 /* NEHModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988716BB71CF004A8C62 /* NEHModule.m */; };
 		C934988B16BB71FC004A8C62 /* NEHArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988A16BB71FC004A8C62 /* NEHArgument.m */; };
 		C934988E16BB7210004A8C62 /* NEHResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988D16BB7210004A8C62 /* NEHResult.m */; };
@@ -27,8 +30,6 @@
 		C9CDCE4016BA531200E17B23 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE3F16BA531200E17B23 /* Default@2x.png */; };
 		C9CDCE4216BA531200E17B23 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE4116BA531200E17B23 /* Default-568h@2x.png */; };
 		C9CDCE4516BA531200E17B23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CDCE4416BA531200E17B23 /* ViewController.m */; };
-		C9CDCE4816BA531200E17B23 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE4616BA531200E17B23 /* ViewController_iPhone.xib */; };
-		C9CDCE4B16BA531200E17B23 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE4916BA531200E17B23 /* ViewController_iPad.xib */; };
 		C9CDCE5716BA53A000E17B23 /* NEHUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */; };
 		C9CDCE5E16BA544400E17B23 /* www in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE5D16BA544400E17B23 /* www */; };
 		C9E8E44B16C1013E007F2548 /* NEHLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8E44A16C1013E007F2548 /* NEHLog.m */; };
@@ -37,13 +38,17 @@
 /* Begin PBXFileReference section */
 		C90FEBF816BACABB00119BC2 /* NEHURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHURLProtocol.h; path = Classes/Bridge/NEHURLProtocol.h; sourceTree = "<group>"; };
 		C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHURLProtocol.m; path = Classes/Bridge/NEHURLProtocol.m; sourceTree = "<group>"; };
-		C91189AD16DC86250035AA5F /* NEH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEH.h; path = Classes/Modules/NEH.h; sourceTree = "<group>"; };
 		C911CA0B16D75560002D52FD /* NEHHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHost.h; path = Classes/Bridge/NEHHost.h; sourceTree = "<group>"; };
 		C911CA0C16D75560002D52FD /* NEHHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHost.m; path = Classes/Bridge/NEHHost.m; sourceTree = "<group>"; };
 		C911CA0F16D76AE5002D52FD /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Classes/Thirdparty/JSON/JSONKit.h; sourceTree = "<group>"; };
 		C911CA1016D76AE5002D52FD /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Classes/Thirdparty/JSON/JSONKit.m; sourceTree = "<group>"; };
 		C9195E0D16DDF97900728E2F /* NEHHostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHostManager.h; path = Classes/Bridge/NEHHostManager.h; sourceTree = "<group>"; };
 		C9195E0E16DDF97900728E2F /* NEHHostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHostManager.m; path = Classes/Bridge/NEHHostManager.m; sourceTree = "<group>"; };
+		C92B105D16FABBF500131F59 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C92B105F16FABEA900131F59 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		C92B106016FABEA900131F59 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		C92B106216FAE75C00131F59 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		C92B106316FAE75C00131F59 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		C934988616BB71CF004A8C62 /* NEHModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHModule.h; path = Classes/Modules/NEHModule.h; sourceTree = "<group>"; };
 		C934988716BB71CF004A8C62 /* NEHModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHModule.m; path = Classes/Modules/NEHModule.m; sourceTree = "<group>"; };
 		C934988916BB71FB004A8C62 /* NEHArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHArgument.h; path = Classes/Modules/NEHArgument.h; sourceTree = "<group>"; };
@@ -71,8 +76,6 @@
 		C9CDCE4116BA531200E17B23 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C9CDCE4316BA531200E17B23 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C9CDCE4416BA531200E17B23 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C9CDCE4716BA531200E17B23 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		C9CDCE4A16BA531200E17B23 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		C9CDCE5516BA53A000E17B23 /* NEHUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHUIWebView.h; path = Classes/Bridge/NEHUIWebView.h; sourceTree = "<group>"; };
 		C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHUIWebView.m; path = Classes/Bridge/NEHUIWebView.m; sourceTree = "<group>"; };
 		C9CDCE5D16BA544400E17B23 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
@@ -138,10 +141,13 @@
 				C9CDCE3A16BA531200E17B23 /* AppDelegate.h */,
 				C9CDCE3B16BA531200E17B23 /* AppDelegate.m */,
 				C9CDCE4316BA531200E17B23 /* ViewController.h */,
+				C92B105D16FABBF500131F59 /* MainStoryboard.storyboard */,
 				C9CDCE4416BA531200E17B23 /* ViewController.m */,
-				C9CDCE4616BA531200E17B23 /* ViewController_iPhone.xib */,
-				C9CDCE4916BA531200E17B23 /* ViewController_iPad.xib */,
 				C9CDCE3216BA531200E17B23 /* Supporting Files */,
+				C92B105F16FABEA900131F59 /* ViewController2.h */,
+				C92B106016FABEA900131F59 /* ViewController2.m */,
+				C92B106216FAE75C00131F59 /* ViewController3.h */,
+				C92B106316FAE75C00131F59 /* ViewController3.m */,
 			);
 			path = iphone;
 			sourceTree = "<group>";
@@ -191,7 +197,6 @@
 				C9E8E44A16C1013E007F2548 /* NEHLog.m */,
 				C9AC402D16D5D029003B3928 /* NEHDevice.h */,
 				C9AC402E16D5D029003B3928 /* NEHDevice.m */,
-				C91189AD16DC86250035AA5F /* NEH.h */,
 				C939EA8B16E7376C0085E7E8 /* NEHNotification.h */,
 				C939EA8C16E7376C0085E7E8 /* NEHNotification.m */,
 			);
@@ -270,9 +275,8 @@
 				C9CDCE3E16BA531200E17B23 /* Default.png in Resources */,
 				C9CDCE4016BA531200E17B23 /* Default@2x.png in Resources */,
 				C9CDCE4216BA531200E17B23 /* Default-568h@2x.png in Resources */,
-				C9CDCE4816BA531200E17B23 /* ViewController_iPhone.xib in Resources */,
-				C9CDCE4B16BA531200E17B23 /* ViewController_iPad.xib in Resources */,
 				C9CDCE5E16BA544400E17B23 /* www in Resources */,
+				C92B105E16FABBF500131F59 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +302,8 @@
 				C911CA1116D76AE5002D52FD /* JSONKit.m in Sources */,
 				C9195E0F16DDF97900728E2F /* NEHHostManager.m in Sources */,
 				C939EA8D16E7376C0085E7E8 /* NEHNotification.m in Sources */,
+				C92B106116FABEA900131F59 /* ViewController2.m in Sources */,
+				C92B106416FAE75C00131F59 /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,22 +316,6 @@
 				C9CDCE3516BA531200E17B23 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C9CDCE4616BA531200E17B23 /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9CDCE4716BA531200E17B23 /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C9CDCE4916BA531200E17B23 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9CDCE4A16BA531200E17B23 /* en */,
-			);
-			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -355,7 +345,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,7 +369,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -393,6 +383,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iphone/iphone-Prefix.pch";
 				INFOPLIST_FILE = "iphone/iphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -404,6 +395,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iphone/iphone-Prefix.pch";
 				INFOPLIST_FILE = "iphone/iphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

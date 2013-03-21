@@ -1,17 +1,16 @@
 //
-//  ViewController.h
+//  ViewController2.h
 //  iphone
 //
-//  Created by hxl on 13-1-31.
+//  Created by hxl on 13-3-21.
 //  Copyright (c) 2013年 hxl. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "NEHUIWebView.h"
 
-@interface ViewController : UIViewController{
+@interface ViewController2 : UIViewController{
+  NEHUIWebView *webView2;
 }
 @property (retain, nonatomic) IBOutlet NEHUIWebView *webView;
-
-
 @end

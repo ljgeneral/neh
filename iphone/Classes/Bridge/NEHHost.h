@@ -3,7 +3,7 @@
 //  iphone
 //
 //  Created by hxl on 13-2-22.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@
 #import "NEHCommand.h"
 
 @interface NEHHost : NSObject
-@property NEHUIWebView* webView;
+@property (nonatomic,strong) NEHUIWebView* webView;
 - (NEHHost*)initWithWebView:(NEHUIWebView*)webView;
 - (NSString*)evalJs:(NSString*)js;
 - (void)getCommandsFromJs;

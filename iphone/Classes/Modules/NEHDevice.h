@@ -3,7 +3,7 @@
 //  iphone
 //
 //  Created by hxl on 13-2-21.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,5 +12,4 @@
 @class NEHModule;
 @interface NEHDevice : NEHModule
 - (void)getDeviceInfo:(NEHArgument*)nehArgument;
-
 @end

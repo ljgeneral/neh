@@ -3,14 +3,13 @@
 //  iphone
 //
 //  Created by hxl on 13-2-1.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "NEHModule.h"
 #import "NEHArgument.h"
 
-@class NEHHost;
 @class NEHUIWebView;
 @interface NEHCommand : NSObject{}
 @property(nonatomic,strong) NEHHost* host;

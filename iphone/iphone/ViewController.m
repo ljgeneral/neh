@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NEHUIWebView.h"
 
 @interface ViewController ()
 
@@ -17,16 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    webView1 = [[NEHUIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
-    webView2 = [[NEHUIWebView alloc] initWithFrame:CGRectMake(0, 240, 320, 240)];
-    [[self view] addSubview:webView1];
-    [[self view] addSubview:webView2];
-	// Do any additional setup after loading the view, typically from a nib.
     NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
     NSURL *appURL = [NSURL fileURLWithPath:startPage];
     NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-    [webView1 loadRequest:appReq];
-    [webView2 loadRequest:appReq];
+    [self.webView loadRequest:appReq];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +31,11 @@
 }
 
 - (void)dealloc {
+  [_webView release];
     [super dealloc];
+}
+- (void)viewDidUnload {
+  [self setWebView:nil];
+  [super viewDidUnload];
 }
 @end

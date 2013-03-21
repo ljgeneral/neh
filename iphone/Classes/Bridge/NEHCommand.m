@@ -3,7 +3,7 @@
 //  iphone
 //
 //  Created by hxl on 13-2-1.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import "NEHCommand.h"
@@ -15,7 +15,7 @@
 @synthesize callbackId=_callbackId;
 @synthesize arguments=_arguments;
 - (NEHCommand*)initWithJSON:(NSString*)json
-                        host:(NEHHost*)theHost{
+                       host:(NEHHost*)theHost{
     NSDictionary* tmpDictionary = [json cdvjk_mutableObjectFromJSONString];
     self.className = [[tmpDictionary valueForKey:@"className"] copy];
     self.methodName = [[tmpDictionary valueForKey:@"methodName"] copy];

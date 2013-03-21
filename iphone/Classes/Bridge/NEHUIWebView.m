@@ -3,7 +3,7 @@
 //  iphone
 //
 //  Created by hxl on 13-1-31.
-//  Copyright (c) 2013年 hxl. All rights reserved.
+//  Copyright (c) 2013年 NetEase FD. All rights reserved.
 //
 
 #import "NEHUIWebView.h"
@@ -21,7 +21,7 @@
 		_webView.opaque = NO;
 		_webView.backgroundColor = [UIColor whiteColor];
 		_webView.contentMode = UIViewContentModeRedraw;
-		_webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+		_webView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
 		[self addSubview:_webView];
 	}
 	return _webView;
@@ -44,18 +44,6 @@
 
 - (void)loadRequest:(NSURLRequest*)request{
     [self.webView loadRequest:request];
-}
-
-- (void)loadHTMLString:(NSString*)string
-               baseURL:(NSURL*)baseURL{
-    [self.webView loadHTMLString:string baseURL:baseURL];
-}
-
-- (void)loadData:(NSData*)data
-        MIMEType:(NSString*)MIMEType
-textEncodingName:(NSString*)textEncodingName
-         baseURL:(NSURL*)baseURL{
-    [self loadData:data MIMEType:MIMEType textEncodingName:textEncodingName baseURL:baseURL];
 }
 
 - (UIScrollView*)scrollview{
@@ -97,8 +85,7 @@ textEncodingName:(NSString*)textEncodingName
 
 - (id)url{
 	NSString *result =[[[self.webView request] URL] absoluteString];
-	if (result!=nil)
-	{
+	if (result!=nil){
 		return result;
 	}
 	return self.url;
@@ -143,7 +130,7 @@ textEncodingName:(NSString*)textEncodingName
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
         NSString* webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
         [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",webViewKey]];
-        [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:webView]  forKey:webViewKey];
+        [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:self]  forKey:webViewKey];
         return NO;
     }
 	return YES;
