@@ -18,6 +18,6 @@
 @property(nonatomic,copy) NSString* callbackId;
 @property(nonatomic,strong) NSMutableArray* arguments;
 - (NEHCommand*)initWithJSON:(NSString*)json
-                        host:(NEHHost*)theHost;
+                       host:(NEHHost*)theHost;
 - (NEHCommand*)execute;
 @end

@@ -12,9 +12,10 @@
 @property (nonatomic,copy) NSString* code;
 @property (nonatomic,copy) NSString* message;
 @property (nonatomic,strong) NSDictionary* data;
-- (NEHResult*)initWithStatus:(NSString*)status
-                     message:(NSString*)message
-                        data:(NSDictionary*)data;
+- (NEHResult*)initWithCode:(NSString*)code
+                   message:(NSString*)message
+                      data:(NSDictionary*)data;
 - (NEHResult*)initWithSuccessData:(NSDictionary*)data;
-- (NSString*)resultWithString;
+- (NEHResult*)initWithErrorMessage:(NSString*)message;
+- (NSString*)resultToString;
 @end

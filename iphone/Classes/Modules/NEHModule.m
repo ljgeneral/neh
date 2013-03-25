@@ -18,7 +18,7 @@
 - (void)successWithCallbackId:(NSString*)callbackId
                        result:(NEHResult*)result{
     [self.host callbackJsWithCallbackId:callbackId
-                                 result:[result resultWithString]
+                                 result:[result resultToString]
                            keepCallback:@"true"];
 }
 @end

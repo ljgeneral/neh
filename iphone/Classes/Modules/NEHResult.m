@@ -12,21 +12,28 @@
 @synthesize code=_code;
 @synthesize message=_message;
 @synthesize data=_data;
-- (NEHResult*)initWithStatus:(NSString*)status
-                     message:(NSString*)message
-                        data:(NSDictionary*)data{
-    self.code = [status copy];
+- (NEHResult*)initWithCode:(NSString*)code
+                   message:(NSString*)message
+                      data:(NSDictionary*)data{
+    self.code = [code copy];
     self.message=[message copy];
     self.data = data;
     return self;
 }
 
 - (NEHResult*)initWithSuccessData:(NSDictionary*)data{
-    return [self initWithStatus:@"1"
-                        message:@"" data:data];
+    return [self initWithCode:@"1"
+                      message:@""
+                         data:data];
 }
 
--(NSString*)resultWithString{
+- (NEHResult*)initWithErrorMessage:(NSString*)message{
+  return [self initWithCode:@"0"
+                    message:message
+                       data:nil];
+}
+
+- (NSString*)resultToString{
     NSMutableDictionary* tmpDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
     [tmpDictionary setValue:self.code forKey:@"code"];
     [tmpDictionary setValue:self.message forKey:@"message"];

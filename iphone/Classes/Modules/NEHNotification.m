@@ -21,7 +21,7 @@
   alertView.callbackId = [callbackId copy];
   NSArray* labels = [buttons componentsSeparatedByString:@","];
   int count = [labels count];
-  for (int n = 0;n<count;n++) {
+  for (int n=0;n<count;n++) {
     [alertView addButtonWithTitle:[labels objectAtIndex:n]];
   }
   [alertView show];

@@ -34,8 +34,7 @@
     NSString* webViewKey = [self.webView stringByEvaluatingJavaScriptFromString:@"return window.WEBVIEW_KEY"];
     [[NEHHostManager sharedInstance] removeHostForKey:webViewKey];
 		self.webView = nil;
-		if (self.webView.loading)
-		{
+		if (self.webView.loading){
 			[self.webView stopLoading];
 		}
 	}

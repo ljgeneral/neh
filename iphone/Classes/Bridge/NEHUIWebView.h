@@ -10,6 +10,7 @@
 #import "NEHHostManager.h"
 #import "NEHURLProtocol.h"
 
+//webview extend
 @interface NEHUIWebView : UIView<UIWebViewDelegate>
 @property(nonatomic,readonly) id url;
 @property(nonatomic,readonly,strong) NSURLRequest* request;
