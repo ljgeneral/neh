@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90FEBFA16BACABB00119BC2 /* NEHURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */; };
-		C911CA0D16D75560002D52FD /* NEHHost.m in Sources */ = {isa = PBXBuildFile; fileRef = C911CA0C16D75560002D52FD /* NEHHost.m */; };
+		C90994C91701464700F108B6 /* NEHCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994C01701464700F108B6 /* NEHCommand.m */; };
+		C90994CA1701464700F108B6 /* NEHHost.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994C21701464700F108B6 /* NEHHost.m */; };
+		C90994CB1701464700F108B6 /* NEHHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994C41701464700F108B6 /* NEHHostManager.m */; };
+		C90994CC1701464700F108B6 /* NEHUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994C61701464700F108B6 /* NEHUIWebView.m */; };
+		C90994CD1701464700F108B6 /* NEHURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994C81701464700F108B6 /* NEHURLProtocol.m */; };
+		C90994D0170146A000F108B6 /* NEHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90994CF170146A000F108B6 /* NEHViewController.m */; };
 		C911CA1116D76AE5002D52FD /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C911CA1016D76AE5002D52FD /* JSONKit.m */; };
-		C9195E0F16DDF97900728E2F /* NEHHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9195E0E16DDF97900728E2F /* NEHHostManager.m */; };
 		C92B105E16FABBF500131F59 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92B105D16FABBF500131F59 /* MainStoryboard.storyboard */; };
 		C92B106116FABEA900131F59 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B106016FABEA900131F59 /* ViewController2.m */; };
 		C92B106416FAE75C00131F59 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B106316FAE75C00131F59 /* ViewController3.m */; };
 		C934988816BB71CF004A8C62 /* NEHModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988716BB71CF004A8C62 /* NEHModule.m */; };
 		C934988B16BB71FC004A8C62 /* NEHArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988A16BB71FC004A8C62 /* NEHArgument.m */; };
 		C934988E16BB7210004A8C62 /* NEHResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C934988D16BB7210004A8C62 /* NEHResult.m */; };
-		C934989116BBA64E004A8C62 /* NEHCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C934989016BBA64E004A8C62 /* NEHCommand.m */; };
 		C939EA8D16E7376C0085E7E8 /* NEHNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C939EA8C16E7376C0085E7E8 /* NEHNotification.m */; };
 		C9AC402F16D5D029003B3928 /* NEHDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC402E16D5D029003B3928 /* NEHDevice.m */; };
 		C9CDCE2C16BA531200E17B23 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CDCE2B16BA531200E17B23 /* UIKit.framework */; };
@@ -30,20 +32,25 @@
 		C9CDCE4016BA531200E17B23 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE3F16BA531200E17B23 /* Default@2x.png */; };
 		C9CDCE4216BA531200E17B23 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE4116BA531200E17B23 /* Default-568h@2x.png */; };
 		C9CDCE4516BA531200E17B23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CDCE4416BA531200E17B23 /* ViewController.m */; };
-		C9CDCE5716BA53A000E17B23 /* NEHUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */; };
 		C9CDCE5E16BA544400E17B23 /* www in Resources */ = {isa = PBXBuildFile; fileRef = C9CDCE5D16BA544400E17B23 /* www */; };
 		C9E8E44B16C1013E007F2548 /* NEHLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8E44A16C1013E007F2548 /* NEHLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C90FEBF816BACABB00119BC2 /* NEHURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHURLProtocol.h; path = Classes/Bridge/NEHURLProtocol.h; sourceTree = "<group>"; };
-		C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHURLProtocol.m; path = Classes/Bridge/NEHURLProtocol.m; sourceTree = "<group>"; };
-		C911CA0B16D75560002D52FD /* NEHHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHost.h; path = Classes/Bridge/NEHHost.h; sourceTree = "<group>"; };
-		C911CA0C16D75560002D52FD /* NEHHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHost.m; path = Classes/Bridge/NEHHost.m; sourceTree = "<group>"; };
+		C90994BF1701464700F108B6 /* NEHCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHCommand.h; path = Classes/Base/NEHCommand.h; sourceTree = "<group>"; };
+		C90994C01701464700F108B6 /* NEHCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHCommand.m; path = Classes/Base/NEHCommand.m; sourceTree = "<group>"; };
+		C90994C11701464700F108B6 /* NEHHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHost.h; path = Classes/Base/NEHHost.h; sourceTree = "<group>"; };
+		C90994C21701464700F108B6 /* NEHHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHost.m; path = Classes/Base/NEHHost.m; sourceTree = "<group>"; };
+		C90994C31701464700F108B6 /* NEHHostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHostManager.h; path = Classes/Base/NEHHostManager.h; sourceTree = "<group>"; };
+		C90994C41701464700F108B6 /* NEHHostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHostManager.m; path = Classes/Base/NEHHostManager.m; sourceTree = "<group>"; };
+		C90994C51701464700F108B6 /* NEHUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHUIWebView.h; path = Classes/Base/NEHUIWebView.h; sourceTree = "<group>"; };
+		C90994C61701464700F108B6 /* NEHUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHUIWebView.m; path = Classes/Base/NEHUIWebView.m; sourceTree = "<group>"; };
+		C90994C71701464700F108B6 /* NEHURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHURLProtocol.h; path = Classes/Base/NEHURLProtocol.h; sourceTree = "<group>"; };
+		C90994C81701464700F108B6 /* NEHURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHURLProtocol.m; path = Classes/Base/NEHURLProtocol.m; sourceTree = "<group>"; };
+		C90994CE170146A000F108B6 /* NEHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHViewController.h; path = Classes/Base/NEHViewController.h; sourceTree = "<group>"; };
+		C90994CF170146A000F108B6 /* NEHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHViewController.m; path = Classes/Base/NEHViewController.m; sourceTree = "<group>"; };
 		C911CA0F16D76AE5002D52FD /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = Classes/Thirdparty/JSON/JSONKit.h; sourceTree = "<group>"; };
 		C911CA1016D76AE5002D52FD /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = Classes/Thirdparty/JSON/JSONKit.m; sourceTree = "<group>"; };
-		C9195E0D16DDF97900728E2F /* NEHHostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHHostManager.h; path = Classes/Bridge/NEHHostManager.h; sourceTree = "<group>"; };
-		C9195E0E16DDF97900728E2F /* NEHHostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHHostManager.m; path = Classes/Bridge/NEHHostManager.m; sourceTree = "<group>"; };
 		C92B105D16FABBF500131F59 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C92B105F16FABEA900131F59 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		C92B106016FABEA900131F59 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
@@ -55,8 +62,6 @@
 		C934988A16BB71FC004A8C62 /* NEHArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHArgument.m; path = Classes/Modules/NEHArgument.m; sourceTree = "<group>"; };
 		C934988C16BB720F004A8C62 /* NEHResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHResult.h; path = Classes/Modules/NEHResult.h; sourceTree = "<group>"; };
 		C934988D16BB7210004A8C62 /* NEHResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHResult.m; path = Classes/Modules/NEHResult.m; sourceTree = "<group>"; };
-		C934988F16BBA64E004A8C62 /* NEHCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHCommand.h; path = Classes/Bridge/NEHCommand.h; sourceTree = "<group>"; };
-		C934989016BBA64E004A8C62 /* NEHCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHCommand.m; path = Classes/Bridge/NEHCommand.m; sourceTree = "<group>"; };
 		C939EA8B16E7376C0085E7E8 /* NEHNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHNotification.h; path = Classes/Modules/NEHNotification.h; sourceTree = "<group>"; };
 		C939EA8C16E7376C0085E7E8 /* NEHNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHNotification.m; path = Classes/Modules/NEHNotification.m; sourceTree = "<group>"; };
 		C9AC402D16D5D029003B3928 /* NEHDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHDevice.h; path = Classes/Modules/NEHDevice.h; sourceTree = "<group>"; };
@@ -76,8 +81,6 @@
 		C9CDCE4116BA531200E17B23 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C9CDCE4316BA531200E17B23 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C9CDCE4416BA531200E17B23 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C9CDCE5516BA53A000E17B23 /* NEHUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHUIWebView.h; path = Classes/Bridge/NEHUIWebView.h; sourceTree = "<group>"; };
-		C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHUIWebView.m; path = Classes/Bridge/NEHUIWebView.m; sourceTree = "<group>"; };
 		C9CDCE5D16BA544400E17B23 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		C9E8E44916C1013E007F2548 /* NEHLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NEHLog.h; path = Classes/Modules/NEHLog.h; sourceTree = "<group>"; };
 		C9E8E44A16C1013E007F2548 /* NEHLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NEHLog.m; path = Classes/Modules/NEHLog.m; sourceTree = "<group>"; };
@@ -169,7 +172,7 @@
 		C9CDCE5116BA531F00E17B23 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C9CDCE5416BA534B00E17B23 /* Bridge */,
+				C9CDCE5416BA534B00E17B23 /* Base */,
 				C9CDCE5316BA533D00E17B23 /* Modules */,
 				C9CDCE5216BA533000E17B23 /* Thirdparty */,
 			);
@@ -203,21 +206,23 @@
 			name = Modules;
 			sourceTree = "<group>";
 		};
-		C9CDCE5416BA534B00E17B23 /* Bridge */ = {
+		C9CDCE5416BA534B00E17B23 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C9CDCE5516BA53A000E17B23 /* NEHUIWebView.h */,
-				C9CDCE5616BA53A000E17B23 /* NEHUIWebView.m */,
-				C90FEBF816BACABB00119BC2 /* NEHURLProtocol.h */,
-				C90FEBF916BACABB00119BC2 /* NEHURLProtocol.m */,
-				C934988F16BBA64E004A8C62 /* NEHCommand.h */,
-				C934989016BBA64E004A8C62 /* NEHCommand.m */,
-				C911CA0B16D75560002D52FD /* NEHHost.h */,
-				C911CA0C16D75560002D52FD /* NEHHost.m */,
-				C9195E0D16DDF97900728E2F /* NEHHostManager.h */,
-				C9195E0E16DDF97900728E2F /* NEHHostManager.m */,
+				C90994BF1701464700F108B6 /* NEHCommand.h */,
+				C90994C01701464700F108B6 /* NEHCommand.m */,
+				C90994C11701464700F108B6 /* NEHHost.h */,
+				C90994C21701464700F108B6 /* NEHHost.m */,
+				C90994C31701464700F108B6 /* NEHHostManager.h */,
+				C90994C41701464700F108B6 /* NEHHostManager.m */,
+				C90994C51701464700F108B6 /* NEHUIWebView.h */,
+				C90994C61701464700F108B6 /* NEHUIWebView.m */,
+				C90994C71701464700F108B6 /* NEHURLProtocol.h */,
+				C90994C81701464700F108B6 /* NEHURLProtocol.m */,
+				C90994CE170146A000F108B6 /* NEHViewController.h */,
+				C90994CF170146A000F108B6 /* NEHViewController.m */,
 			);
-			name = Bridge;
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,20 +295,21 @@
 				C9CDCE3816BA531200E17B23 /* main.m in Sources */,
 				C9CDCE3C16BA531200E17B23 /* AppDelegate.m in Sources */,
 				C9CDCE4516BA531200E17B23 /* ViewController.m in Sources */,
-				C9CDCE5716BA53A000E17B23 /* NEHUIWebView.m in Sources */,
-				C90FEBFA16BACABB00119BC2 /* NEHURLProtocol.m in Sources */,
 				C934988816BB71CF004A8C62 /* NEHModule.m in Sources */,
 				C934988B16BB71FC004A8C62 /* NEHArgument.m in Sources */,
 				C934988E16BB7210004A8C62 /* NEHResult.m in Sources */,
-				C934989116BBA64E004A8C62 /* NEHCommand.m in Sources */,
 				C9E8E44B16C1013E007F2548 /* NEHLog.m in Sources */,
 				C9AC402F16D5D029003B3928 /* NEHDevice.m in Sources */,
-				C911CA0D16D75560002D52FD /* NEHHost.m in Sources */,
 				C911CA1116D76AE5002D52FD /* JSONKit.m in Sources */,
-				C9195E0F16DDF97900728E2F /* NEHHostManager.m in Sources */,
 				C939EA8D16E7376C0085E7E8 /* NEHNotification.m in Sources */,
 				C92B106116FABEA900131F59 /* ViewController2.m in Sources */,
 				C92B106416FAE75C00131F59 /* ViewController3.m in Sources */,
+				C90994C91701464700F108B6 /* NEHCommand.m in Sources */,
+				C90994CA1701464700F108B6 /* NEHHost.m in Sources */,
+				C90994CB1701464700F108B6 /* NEHHostManager.m in Sources */,
+				C90994CC1701464700F108B6 /* NEHUIWebView.m in Sources */,
+				C90994CD1701464700F108B6 /* NEHURLProtocol.m in Sources */,
+				C90994D0170146A000F108B6 /* NEHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
