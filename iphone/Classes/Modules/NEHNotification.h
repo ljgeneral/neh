@@ -10,8 +10,6 @@
 #import <AudioToolbox/AudioServices.h>
 #import "NEHModule.h"
 
-#import "NEHModule.h"
-
 @interface NEHNotification : NEHModule<UIAlertViewDelegate>
 - (void)alert:(NEHArgument*)nehArgument;
 - (void)confirm:(NEHArgument*)nehArgument;
