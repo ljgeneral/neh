@@ -72,7 +72,6 @@
                    callbackId:callbackId];
 }
 
-/*callback to js*/
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
   NEHUIAlertView* nehAlertView = (NEHUIAlertView*)alertView;
   NSMutableDictionary* resultDictionary = [[NSMutableDictionary alloc] initWithCapacity:1];

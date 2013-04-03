@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NEHUIWebView.h"
 #import "NEHCommand.h"
+#import "NEHModule.h"
 
 @interface NEHHost : NSObject
 @property (nonatomic,strong) NEHUIWebView* webView;

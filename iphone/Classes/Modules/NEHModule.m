@@ -19,6 +19,6 @@
                        result:(NEHResult*)result{
     [self.host callbackJsWithCallbackId:callbackId
                                  result:[result resultToString]
-                           keepCallback:@"true"];
+                           keepCallback:@"false"];
 }
 @end
