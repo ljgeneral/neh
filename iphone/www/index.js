@@ -1,4 +1,6 @@
 var f=function(){
+  var _  = NEJ.P,
+      _v = _('nej.v');
   //写日志
 	window.writeLog = function(){
       native.log.write('This is a log');
@@ -19,8 +21,14 @@ var f=function(){
                                         alert(_result.data.index);
                                 });
   }
+  _v._$addEvent('btnWriteLog','tap',writeLog);
+  _v._$addEvent('btnGetDeviceInfo','tap',getDeviceInfo);
+  _v._$addEvent('btnAlert','tap',nativeAlert);
+  _v._$addEvent('btnConfirm','tap',nativeConfirm);
+  
 }
 define(['{lib}hybrid/ios/log.js',
         '{lib}hybrid/ios/device.js',
-        '{lib}hybrid/ios/notification.js'
+        '{lib}hybrid/ios/notification.js',
+        '{lib}util/gesture/tap.js'
         ],f)

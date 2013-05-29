@@ -127,9 +127,10 @@
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType{
     if ([[[request URL] absoluteString] isEqualToString:@"neh://ready"]) {
         [NSURLProtocol registerClass:[NEHURLProtocol class]];
+        srand((unsigned)time(0));
         NSString* webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
-        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",webViewKey]];
         [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithWebView:self]  forKey:webViewKey];
+        [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",webViewKey]];
         return NO;
     }
 	return YES;

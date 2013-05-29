@@ -7,6 +7,8 @@
 //
 
 #import "NEHDevice.h"
+#include <sys/types.h>
+#include <sys/sysctl.h>
 
 @implementation NEHDevice
 - (void)getDeviceInfo:(NEHArgument*)nehArgument{
@@ -14,15 +16,33 @@
     [self successWithCallbackId:nehArgument.callbackId result:result];
 }
 
+- (NSString *) hardwarePlatform{
+  int mib[2];
+  size_t len;
+  char *machine;
+  
+  mib[0] = CTL_HW;
+  mib[1] = HW_MACHINE;
+  sysctl(mib, 2, NULL, &len, NULL, 0);
+  machine = malloc(len);
+  sysctl(mib, 2, machine, &len, NULL, 0);
+  
+  NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
+  free(machine);
+  return platform;
+}
+
 - (NSDictionary*)deviceProperties{
     UIDevice* device = [UIDevice currentDevice];
-    NSMutableDictionary* devProps = [NSMutableDictionary dictionaryWithCapacity:4];
+    NSMutableDictionary* deviceInfo = [NSMutableDictionary dictionaryWithCapacity:4];
     
-    [devProps setObject:@"iOS" forKey:@"platform"];
-    [devProps setObject:[device systemVersion] forKey:@"version"];
-    [devProps setObject:[device model] forKey:@"name"];
+    [deviceInfo setObject:[self hardwarePlatform] forKey:@"platform"];
+    [deviceInfo setObject:[device systemVersion] forKey:@"version"];
+    [deviceInfo setObject:[device model] forKey:@"model"];
+    [deviceInfo setObject:[[[UIDevice currentDevice] identifierForVendor] UUIDString]  forKey:@"id"];
     
-    NSDictionary* devReturn = [NSDictionary dictionaryWithDictionary:devProps];
+    NSDictionary* devReturn = [NSDictionary dictionaryWithDictionary:deviceInfo];
     return devReturn;
 }
+
 @end

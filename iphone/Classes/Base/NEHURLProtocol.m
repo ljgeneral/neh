@@ -7,13 +7,15 @@
 //
 
 #import "NEHURLProtocol.h"
+#import "NEHHostManager.h"
 
 @implementation NEHURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest*)theRequest{
     NSURL* requestUrl = [theRequest URL];
     if([[requestUrl scheme] isEqualToString:@"neh"]){
-        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[[requestUrl resourceSpecifier] substringFromIndex:2] ];
+        NSString *resourceSpecifier = [requestUrl resourceSpecifier];
+        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)] ];
         [host performSelectorOnMainThread:@selector(getCommandsFromJs)
                                withObject:nil
                             waitUntilDone:NO];
