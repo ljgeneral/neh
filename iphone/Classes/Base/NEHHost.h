@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NEHUIWebView.h"
+#import "NEHViewController.h"
 #import "NEHCommand.h"
 #import "NEHModule.h"
 
+@class NEHViewController;
 @interface NEHHost : NSObject
-@property (nonatomic,strong) NEHUIWebView* webView;
-- (NEHHost*)initWithWebView:(NEHUIWebView*)webView;
+@property (nonatomic,strong) NEHViewController* viewController;
+- (NEHHost*)initWithViewController:(NEHViewController*)viewController;
 - (NSString*)evalJs:(NSString*)js;
 - (void)getCommandsFromJs;
 - (void)callbackJsWithCallbackId:(NSString*)callbackId

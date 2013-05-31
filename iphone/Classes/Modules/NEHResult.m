@@ -28,9 +28,9 @@
 }
 
 - (NEHResult*)initWithErrorMessage:(NSString*)message{
-  return [self initWithCode:@"0"
-                    message:message
-                       data:nil];
+    return [self initWithCode:@"0"
+                      message:message
+                         data:nil];
 }
 
 - (NSString*)resultToString{

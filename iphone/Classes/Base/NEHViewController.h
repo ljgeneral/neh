@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NEHHostManager.h"
+#import "NEHURLProtocol.h"
 
-@interface NEHViewController : UIViewController
+@interface NEHViewController : UIViewController <UIWebViewDelegate>{
 
+}
+- (void)loadRequest:(NSURLRequest*)request;
+- (NSString*)stringByEvaluatingJavaScriptFromString:(NSString*)code;
+- (void)stopLoading;
+- (void)goBack;
+- (void)goForward;
+- (BOOL)isLoading;
+- (BOOL)canGoBack;
+- (BOOL)canGoForward;
+- (void)reload;
+- (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration;
 @end
+
+

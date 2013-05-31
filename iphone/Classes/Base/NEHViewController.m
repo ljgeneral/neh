@@ -9,30 +9,115 @@
 #import "NEHViewController.h"
 
 @interface NEHViewController ()
-
+@property (nonatomic) UIWebView* webView;
+@property (nonatomic) NSString* webViewKey;
 @end
 
 @implementation NEHViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@synthesize webView=_webView;
+- (UIWebView *)webView{
+	if (_webView==nil)
+	{
+		_webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+		_webView.delegate = self;
+		_webView.opaque = NO;
+		_webView.backgroundColor = [UIColor whiteColor];
+		_webView.contentMode = UIViewContentModeRedraw;
+		_webView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+		[self.view addSubview:_webView];
+	}
+	return _webView;
 }
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  [super viewWillAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)dealloc{
+	if (self.webView!=nil)
+	{
+    [[NEHHostManager sharedInstance] removeHostForKey:self.webViewKey];
+		if (self.webView.loading){
+			[self.webView stopLoading];
+		}
+    self.webView = nil;
+	}
+	[super dealloc];
+}
+
+- (void)loadRequest:(NSURLRequest*)request{
+  [self.webView loadRequest:request];
+}
+
+- (NSString*)stringByEvaluatingJavaScriptFromString:(NSString *)code{
+  return [[self webView] stringByEvaluatingJavaScriptFromString:code];
+}
+
+- (void)reload{
+	[self.webView reload];
+}
+
+- (void)stopLoading{
+	[self.webView stopLoading];
+}
+
+- (void)goBack{
+	[self.webView goBack];
+}
+
+- (void)goForward{
+	[self.webView goForward];
+}
+
+- (BOOL)isLoading{
+	return [self.webView isLoading];
+}
+
+- (BOOL)canGoBack{
+	return [self.webView canGoBack];
+}
+
+- (BOOL)canGoForward{
+	return [self.webView canGoForward];
+}
+
+- (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration {
+	double i = 0;
+	
+	switch (toInterfaceOrientation){
+		case UIInterfaceOrientationPortrait:
+			i = 0;
+			break;
+		case UIInterfaceOrientationPortraitUpsideDown:
+			i = 180;
+			break;
+		case UIInterfaceOrientationLandscapeLeft:
+			i = 90;
+			break;
+		case UIInterfaceOrientationLandscapeRight:
+			i = -90;
+			break;
+	}
+	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"navigator.orientation.setOrientation(%f);", i]];
+}
+
+#pragma mark WebView Delegate
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType{
+  if ([[[request URL] absoluteString] isEqualToString:@"neh://ready"]) {
+    [NEHURLProtocol enable];//处理自定义URL
+    srand((unsigned)time(0));
+    self.webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
+    [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithController:self]  forKey:self.webViewKey];
+    [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",self.webViewKey]];
+    return NO;
+  }
+	return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView*)webView{
+  [webView setNeedsDisplay];
 }
 
 @end

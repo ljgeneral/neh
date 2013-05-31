@@ -9,14 +9,14 @@
 #import "NEHHost.h"
 
 @implementation NEHHost
-@synthesize webView=_webView;
-- (NEHHost*)initWithWebView:(NEHUIWebView*)theWebView{
-    self.webView=theWebView;
+@synthesize viewController=_viewController;
+- (NEHHost*)initWithViewController:(NEHViewController *)viewController{
+    self.viewController=viewController;
     return self;
 }
 
 - (NSString*)evalJs:(NSString*)js{
-    return [self.webView stringByEvaluatingJavaScriptFromString:js];
+    return [self.viewController stringByEvaluatingJavaScriptFromString:js];
 }
 
 - (void)executeCommand:(NEHCommand*)command{

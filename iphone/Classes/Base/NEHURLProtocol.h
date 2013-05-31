@@ -10,5 +10,5 @@
 #import "NEHHostManager.h"
 
 @interface NEHURLProtocol : NSURLProtocol
-
++ (void)enable;
 @end
