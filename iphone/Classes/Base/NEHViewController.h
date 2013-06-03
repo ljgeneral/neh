@@ -13,6 +13,8 @@
 @interface NEHViewController : UIViewController <UIWebViewDelegate>{
 
 }
+- (id)initWithParentController:(UIViewController *)parentController;
+
 - (void)loadRequest:(NSURLRequest*)request;
 - (NSString*)stringByEvaluatingJavaScriptFromString:(NSString*)code;
 - (void)stopLoading;
@@ -22,7 +24,9 @@
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;
 - (void)reload;
+
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration;
+- (void)didReceiveMemoryWarning;
 @end
 
 

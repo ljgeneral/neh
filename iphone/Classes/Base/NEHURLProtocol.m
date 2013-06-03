@@ -10,9 +10,11 @@
 #import "NEHHostManager.h"
 
 @implementation NEHURLProtocol
+
 + (void)enable{
   [NSURLProtocol registerClass:[NEHURLProtocol class]];
 }
+
 + (BOOL)canInitWithRequest:(NSURLRequest*)theRequest{
     NSURL* requestUrl = [theRequest URL];
     if([[requestUrl scheme] isEqualToString:@"neh"]){
@@ -23,6 +25,7 @@
                             waitUntilDone:NO];
     }
     return NO;
+  
 }
 
 

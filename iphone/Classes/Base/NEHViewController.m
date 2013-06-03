@@ -29,9 +29,11 @@
 	return _webView;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
+- (id)initWithParentController:(UIViewController *)parentController{
+  self.view.frame = parentController.view.bounds;
+  [parentController addChildViewController:self];
+  [parentController.view addSubview:self.view];
+  return self;
 }
 
 - (void)dealloc{
@@ -84,7 +86,6 @@
 
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration {
 	double i = 0;
-	
 	switch (toInterfaceOrientation){
 		case UIInterfaceOrientationPortrait:
 			i = 0;
@@ -99,7 +100,13 @@
 			i = -90;
 			break;
 	}
-	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"navigator.orientation.setOrientation(%f);", i]];
+	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.onnativeorientationchange(%f);", i]];
+}
+
+- (void)didReceiveMemoryWarning
+{
+  NSLog(@"memory warning received by controller");
+  [self.webView stringByEvaluatingJavaScriptFromString:@"window.onmemorywarning();"];
 }
 
 #pragma mark WebView Delegate
