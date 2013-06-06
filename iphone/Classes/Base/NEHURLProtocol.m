@@ -20,7 +20,7 @@
     if([[requestUrl scheme] isEqualToString:@"neh"]){
         NSString *resourceSpecifier = [requestUrl resourceSpecifier];
         NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)] ];
-        [host performSelectorOnMainThread:@selector(getCommandsFromJs)
+        [host performSelectorOnMainThread:@selector(getCommandsFromJS)
                                withObject:nil
                             waitUntilDone:NO];
     }

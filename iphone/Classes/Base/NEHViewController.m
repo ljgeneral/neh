@@ -11,10 +11,13 @@
 @interface NEHViewController ()
 @property (nonatomic) UIWebView* webView;
 @property (nonatomic) NSString* webViewKey;
+@property (nonatomic) UIActivityIndicatorView* activityIndicatorView;
 @end
 
 @implementation NEHViewController
 @synthesize webView=_webView;
+@synthesize parent=_parent;
+@synthesize activityIndicatorView = _activityIndicatorView;
 - (UIWebView *)webView{
 	if (_webView==nil)
 	{
@@ -30,6 +33,7 @@
 }
 
 - (id)initWithParentController:(UIViewController *)parentController{
+  self.parent = parentController;
   self.view.frame = parentController.view.bounds;
   [parentController addChildViewController:self];
   [parentController.view addSubview:self.view];
@@ -50,9 +54,24 @@
 
 - (void)loadRequest:(NSURLRequest*)request{
   [self.webView loadRequest:request];
+  [self startLoadingView];
 }
 
-- (NSString*)stringByEvaluatingJavaScriptFromString:(NSString *)code{
+- (void)startLoadingView{
+  if(!self.activityIndicatorView){
+    self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+    [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //[self.activityIndicatorView setCenter:CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2)];
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
+  }
+}
+
+- (void)stopLoadingView{
+  [self.activityIndicatorView stopAnimating];
+}
+
+- (NSString*)evalJS:(NSString *)code{
   return [[self webView] stringByEvaluatingJavaScriptFromString:code];
 }
 
@@ -100,14 +119,22 @@
 			i = -90;
 			break;
 	}
-	[self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.onnativeorientationchange(%f);", i]];
+	[self evalJS:[NSString stringWithFormat:@"window.onnativeorientationchange(%f);", i]];
 }
 
 - (void)didReceiveMemoryWarning
 {
   NSLog(@"memory warning received by controller");
-  [self.webView stringByEvaluatingJavaScriptFromString:@"window.onmemorywarning();"];
+  [self evalJS:@"window.onmemorywarning();"];
 }
+
+- (void)applicationDidEnterBackground:(UIApplication *)application{
+  [self evalJS:@"window.onappevent('EnterBackground')"];
+};
+
+- (void)applicationWillEnterForeground:(UIApplication *)application{
+  [self evalJS:@"window.onappevent('EnterForeground')"];
+};
 
 #pragma mark WebView Delegate
 
@@ -116,10 +143,11 @@
     [NEHURLProtocol enable];//处理自定义URL
     srand((unsigned)time(0));
     self.webViewKey = [NSString stringWithFormat:@"%d",rand()/(double)(RAND_MAX)];
-    [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithController:self]  forKey:self.webViewKey];
+    [[NEHHostManager sharedInstance] addHost:[[NEHHost alloc] initWithViewController:self]  forKey:self.webViewKey];
     [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",self.webViewKey]];
     return NO;
   }
+  ///[self hideLoadingView];
 	return YES;
 }
 

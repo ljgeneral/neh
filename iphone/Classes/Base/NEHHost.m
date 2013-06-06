@@ -15,8 +15,8 @@
     return self;
 }
 
-- (NSString*)evalJs:(NSString*)js{
-    return [self.viewController stringByEvaluatingJavaScriptFromString:js];
+- (NSString*)evalJS:(NSString*)js{
+    return [self.viewController evalJS:js];
 }
 
 - (void)executeCommand:(NEHCommand*)command{
@@ -27,8 +27,8 @@
   objc_msgSend(obj, normalSelector, argument);
 }
 
-- (void)getCommandsFromJs{
-    NSString* commandString = [self evalJs:@"neh.getCommands()"];
+- (void)getCommandsFromJS{
+    NSString* commandString = [self evalJS:@"neh.getCommands()"];
     NSArray* commandArray = [commandString cdvjk_mutableObjectFromJSONString];
     for(NSInteger i=0;i<[commandArray count];i++){
       NEHCommand* command = [[NEHCommand alloc] initWithJSON:[[commandArray objectAtIndex:i] cdvjk_JSONString]];
@@ -36,10 +36,10 @@
     }
 }
 
-- (void)callbackJsWithCallbackId:(NSString*)callbackId
+- (void)callbackJSWithCallbackId:(NSString*)callbackId
                           result:(NSString*)result
                     keepCallback:(NSString*)keepCallback{
-    [self evalJs:[NSString stringWithFormat:@"neh.callback('%@','%@','%@')",callbackId,result,keepCallback]];
+    [self evalJS:[NSString stringWithFormat:@"neh.callback('%@','%@','%@')",callbackId,result,keepCallback]];
 }
 
 @end

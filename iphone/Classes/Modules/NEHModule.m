@@ -15,9 +15,17 @@
     return self;
 }
 
+- (void)keepCallbackWithCallbackId:(NSString*)callbackId
+                            result:(NEHResult*)result{
+  [self.host callbackJSWithCallbackId:callbackId
+                               result:[result resultToString]
+                         keepCallback:@"true"];
+  
+}
+
 - (void)successWithCallbackId:(NSString*)callbackId
                        result:(NEHResult*)result{
-    [self.host callbackJsWithCallbackId:callbackId
+    [self.host callbackJSWithCallbackId:callbackId
                                  result:[result resultToString]
                            keepCallback:@"false"];
 }

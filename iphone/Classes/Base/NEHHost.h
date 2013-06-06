@@ -15,9 +15,9 @@
 @interface NEHHost : NSObject
 @property (nonatomic,strong) NEHViewController* viewController;
 - (NEHHost*)initWithViewController:(NEHViewController*)viewController;
-- (NSString*)evalJs:(NSString*)js;
-- (void)getCommandsFromJs;
-- (void)callbackJsWithCallbackId:(NSString*)callbackId
+- (NSString*)evalJS:(NSString*)js;
+- (void)getCommandsFromJS;
+- (void)callbackJSWithCallbackId:(NSString*)callbackId
                           result:(NSString*)result
                     keepCallback:(NSString*)keepCallback;
 @end
