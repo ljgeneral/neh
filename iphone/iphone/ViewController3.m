@@ -13,7 +13,8 @@
 @end
 
 @implementation ViewController3
-
+@synthesize webViewController1 = _webViewController1;
+@synthesize webViewController2 = _webViewController2;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,12 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  self.webViewController1 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height/2)];
+  self.webViewController2 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, self.view.bounds.size.height/2, self.view.bounds.size.width, self.view.bounds.size.height/2)];
 	// Do any additional setup after loading the view.
   NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
   NSURL *appURL = [NSURL fileURLWithPath:startPage];
   NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-  [self.webView1 loadRequest:appReq];
-  [self.webView2 loadRequest:appReq];
+  [self.webViewController1 loadRequest:appReq];
+  [self.webViewController2 loadRequest:appReq];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,8 +44,8 @@
 }
 
 - (void)dealloc {
-  [_webView1 release];
-  [_webView1 release];
+  //[_webView1 release];
+  //[_webView1 release];
   [super dealloc];
 }
 - (void)viewDidUnload {

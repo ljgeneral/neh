@@ -33,8 +33,12 @@
 }
 
 - (id)initWithParentController:(UIViewController *)parentController{
+  return [self initWithParentController:parentController frame:parentController.view.bounds];
+}
+
+- (id)initWithParentController:(UIViewController *)parentController frame:(CGRect)frame{
   self.parent = parentController;
-  self.view.frame = parentController.view.bounds;
+  self.view.frame = frame;
   [parentController addChildViewController:self];
   [parentController.view addSubview:self.view];
   return self;
@@ -61,7 +65,7 @@
   if(!self.activityIndicatorView){
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
     [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    //[self.activityIndicatorView setCenter:CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2)];
+    [self.activityIndicatorView setCenter:CGPointMake(self.webView.frame.size.width/2, self.webView.frame.size.height/2)];
     [self.view addSubview:self.activityIndicatorView];
     [self.activityIndicatorView startAnimating];
   }
@@ -147,7 +151,7 @@
     [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"neh.setWebViewKey('%@')",self.webViewKey]];
     return NO;
   }
-  ///[self hideLoadingView];
+  [self stopLoadingView];
 	return YES;
 }
 

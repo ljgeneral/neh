@@ -16,6 +16,7 @@
 @property (nonatomic,retain) UIViewController *parent;
 
 - (id)initWithParentController:(UIViewController *)parentController;
+- (id)initWithParentController:(UIViewController *)parentController frame:(CGRect)frame;
 
 - (void)loadRequest:(NSURLRequest*)request;
 - (NSString*)evalJS:(NSString*)code;

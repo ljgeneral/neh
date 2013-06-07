@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController2
-
+@synthesize webViewController=_webViewController;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,12 +25,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  self.webViewController = [[NEHViewController alloc] initWithParentController:self];
 	// Do any additional setup after loading the view.
   NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
   NSURL *appURL = [NSURL fileURLWithPath:startPage];
   NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-  [self.webView loadRequest:appReq];
+  [self.webViewController loadRequest:appReq];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,11 +41,9 @@
 }
 
 - (void)dealloc {
-  [_webView release];
   [super dealloc];
 }
 - (void)viewDidUnload {
-  [self setWebView:nil];
   [super viewDidUnload];
 }
 @end

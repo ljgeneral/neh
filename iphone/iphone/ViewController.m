@@ -7,21 +7,21 @@
 //
 
 #import "ViewController.h"
-#import "NEHUIWebView.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
+@synthesize webViewController = _webViewController;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  self.webViewController = [[NEHViewController alloc] initWithParentController:self];
     NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
     NSURL *appURL = [NSURL fileURLWithPath:startPage];
     NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-    [self.webView loadRequest:appReq];
+    [self.webViewController loadRequest:appReq];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,7 +31,6 @@
 }
 
 - (void)dealloc {
-  [_webView release];
     [super dealloc];
 }
 - (void)viewDidUnload {

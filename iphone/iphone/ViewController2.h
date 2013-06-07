@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NEHUIWebView.h"
+#import "NEHViewController.h"
 
 @interface ViewController2 : UIViewController{
-  NEHUIWebView *webView2;
 }
-@property (retain, nonatomic) IBOutlet NEHUIWebView *webView;
+@property (retain, nonatomic) NEHViewController *webViewController;
 @end
