@@ -25,7 +25,7 @@ var f=function(){
   
   //Native Navigation
   window.nativeNavigation = function(){
-    native.navigation.navigateToURL('index.html');
+    native.navigation.navigateToURL('second.html');
   }
   
   //Native Navigation Back
@@ -35,13 +35,29 @@ var f=function(){
   
   //Native Show Modal
   window.nativeShowModal = function(){
-    native.navigation.openModal('index.html');
+    native.navigation.openModal('second.html');
   }
   
   //Native Close Modal
   window.nativeCloseModal = function(){
     native.navigation.closeModal();
   }
+  
+  window.addAppEvent = function(){
+    _v._$addEvent(window,'appevent',function(_info){
+                  native.log.write(_info);
+    });
+  }
+  
+  //
+  window.addOrientationEvent = function(){
+    _v._$addEvent(window,'nativeorientation',function(_degree){
+                    native.log.write(_degree);
+                  });
+  }
+  
+  //
+  window.nativeOrientationEventHandler = 
   _v._$addEvent('btnWriteLog','tap',writeLog);
   _v._$addEvent('btnGetDeviceInfo','tap',getDeviceInfo);
   _v._$addEvent('btnAlert','tap',nativeAlert);
@@ -50,6 +66,8 @@ var f=function(){
   _v._$addEvent('btnNavigateBack','tap',nativeNavigationBack);
   _v._$addEvent('btnShowModal','tap',nativeShowModal);
   _v._$addEvent('btnCloseModal','tap',nativeCloseModal);
+  _v._$addEvent('btnAppEvent','tap',addAppEvent);
+  _v._$addEvent('btnOrientationEvent','tap',addOrientationEvent);
   
 }
 define(['{lib}hybrid/ios/log.js',
@@ -57,6 +75,7 @@ define(['{lib}hybrid/ios/log.js',
         '{lib}hybrid/ios/notification.js',
         '{lib}hybrid/ios/navigation.js',
         '{lib}hybrid/ios/appevent.js',
+        '{lib}hybrid/ios/orientation.js',
         '{lib}hybrid/ios/memory.js',
         '{lib}util/gesture/tap.js'
         ],f)

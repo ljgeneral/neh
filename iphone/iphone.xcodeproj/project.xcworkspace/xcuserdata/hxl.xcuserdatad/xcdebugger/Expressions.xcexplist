@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[NEHViewController evalJS:]:NEHViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "+[NEHURLProtocol canInitWithRequest:]:NEHURLProtocol.m">
          <PersistentStrings>
             <PersistentString

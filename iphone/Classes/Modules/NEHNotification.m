@@ -49,8 +49,7 @@
                    callbackId:callbackId];
 }
 
-- (void)confirm:(NEHArgument*)nehArgument
-{
+- (void)confirm:(NEHArgument*)nehArgument{
   NSString* callbackId = nehArgument.callbackId;
   NSArray* arguments = nehArgument.arguments;
   int argc = [arguments count];

@@ -13,6 +13,7 @@
 @interface NEHViewController : UIViewController <UIWebViewDelegate>{
 
 }
+@property (nonatomic) UIWebView* webView;
 @property (nonatomic,retain) UIViewController *parent;
 
 - (id)initWithParentController:(UIViewController *)parentController;
@@ -30,8 +31,8 @@
 
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration;
 - (void)didReceiveMemoryWarning;
-- (void)applicationDidEnterBackground:(UIApplication *)application;
-- (void)applicationWillEnterForeground:(UIApplication *)application;
+- (void)applicationEnterBackground;
+- (void)applicationEnterForeground;
 @end
 
 

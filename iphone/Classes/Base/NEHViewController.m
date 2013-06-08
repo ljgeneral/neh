@@ -9,13 +9,13 @@
 #import "NEHViewController.h"
 
 @interface NEHViewController ()
-@property (nonatomic) UIWebView* webView;
 @property (nonatomic) NSString* webViewKey;
 @property (nonatomic) UIActivityIndicatorView* activityIndicatorView;
 @end
 
 @implementation NEHViewController
 @synthesize webView=_webView;
+@synthesize webViewKey=_webViewKey;
 @synthesize parent=_parent;
 @synthesize activityIndicatorView = _activityIndicatorView;
 - (UIWebView *)webView{
@@ -107,6 +107,10 @@
 	return [self.webView canGoForward];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
+}
+
 - (void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration: (NSTimeInterval)duration {
 	double i = 0;
 	switch (toInterfaceOrientation){
@@ -123,7 +127,7 @@
 			i = -90;
 			break;
 	}
-	[self evalJS:[NSString stringWithFormat:@"window.onnativeorientationchange(%f);", i]];
+	[self evalJS:[NSString stringWithFormat:@"window.onnativeorientation(%f);", i]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,11 +136,11 @@
   [self evalJS:@"window.onmemorywarning();"];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application{
+- (void)applicationEnterBackground{
   [self evalJS:@"window.onappevent('EnterBackground')"];
 };
 
-- (void)applicationWillEnterForeground:(UIApplication *)application{
+- (void)applicationEnterForeground{
   [self evalJS:@"window.onappevent('EnterForeground')"];
 };
 

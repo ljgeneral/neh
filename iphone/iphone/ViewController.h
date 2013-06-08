@@ -12,5 +12,6 @@
 @interface ViewController : UIViewController{}
 @property (retain, nonatomic)NEHViewController  *webViewController;
 
-
+- (void)applicationDidEnterBackground;
+- (void)applicationWillEnterForeground;
 @end

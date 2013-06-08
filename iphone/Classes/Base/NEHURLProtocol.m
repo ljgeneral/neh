@@ -19,7 +19,8 @@
     NSURL* requestUrl = [theRequest URL];
     if([[requestUrl scheme] isEqualToString:@"neh"]){
         NSString *resourceSpecifier = [requestUrl resourceSpecifier];
-        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:[resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)] ];
+        NSString *webViewKey = [resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)];
+        NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:webViewKey];
         [host performSelectorOnMainThread:@selector(getCommandsFromJS)
                                withObject:nil
                             waitUntilDone:NO];

@@ -42,13 +42,11 @@
   [self.host.viewController presentViewController:nehViewController animated:YES completion:nil];
 };
 
-- (void)closeModal:(NEHArgument*)nehArgument
-{
+- (void)closeModal:(NEHArgument*)nehArgument{
   [self.host.viewController dismissViewControllerAnimated:YES completion:nil];
 };
 
-+ (NSString*) pathForResource:(NSString*)resourcepath
-{
++ (NSString*) pathForResource:(NSString*)resourcepath{
   NSBundle * mainBundle = [NSBundle mainBundle];
   NSMutableArray *directoryParts = [NSMutableArray arrayWithArray:[resourcepath componentsSeparatedByString:@"/"]];
   NSString       *filename       = [directoryParts lastObject];
@@ -64,8 +62,8 @@
 
 + (NSURL *) urlFromString:(NSString *)urlString{
   NSMutableArray *parameterParts = [NSMutableArray arrayWithArray:[urlString componentsSeparatedByString:@"#"]];
-  NSString* realStartPage =  [parameterParts objectAtIndex:0];
-  NSString* realParameter = nil;
+  NSString *realStartPage =  [parameterParts objectAtIndex:0];
+  NSString *realParameter = nil;
   if ([parameterParts count]>1){
     realParameter = [parameterParts objectAtIndex:1];
   }

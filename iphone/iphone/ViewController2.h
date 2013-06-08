@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NEHViewController.h"
+#import "NEHPullRefreshViewController.h"
 
 @interface ViewController2 : UIViewController{
 }
-@property (retain, nonatomic) NEHViewController *webViewController;
+@property (retain, nonatomic) NEHPullRefreshViewController *pullRefreshViewController;
 @end

@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController2
-@synthesize webViewController=_webViewController;
+@synthesize pullRefreshViewController=_pullRefreshViewController;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,12 +26,15 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.webViewController = [[NEHViewController alloc] initWithParentController:self];
-	// Do any additional setup after loading the view.
+  [self initWebViewController];
+}
+
+- (void)initWebViewController{
+  self.pullRefreshViewController = [[NEHPullRefreshViewController alloc] initWithParentController:self];
   NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
   NSURL *appURL = [NSURL fileURLWithPath:startPage];
   NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-  [self.webViewController loadRequest:appReq];
+  [self.pullRefreshViewController loadRequest:appReq];
 }
 
 - (void)didReceiveMemoryWarning
