@@ -15,6 +15,7 @@
 		C939912017621DF2008B812E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C939911F17621DF2008B812E /* QuartzCore.framework */; };
 		C93991241762CCD2008B812E /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C93991221762CCD2008B812E /* blueArrow.png */; };
 		C93991251762CCD2008B812E /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C93991231762CCD2008B812E /* blueArrow@2x.png */; };
+		C939912F17630538008B812E /* NEHPullRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C939912E17630538008B812E /* NEHPullRefresh.m */; };
 		C95881681761B5120023D191 /* NEHCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814A1761B5120023D191 /* NEHCommand.m */; };
 		C95881691761B5120023D191 /* NEHHost.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814C1761B5120023D191 /* NEHHost.m */; };
 		C958816A1761B5120023D191 /* NEHHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814E1761B5120023D191 /* NEHHostManager.m */; };
@@ -55,6 +56,8 @@
 		C939911F17621DF2008B812E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C93991221762CCD2008B812E /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		C93991231762CCD2008B812E /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		C939912D17630538008B812E /* NEHPullRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHPullRefresh.h; sourceTree = "<group>"; };
+		C939912E17630538008B812E /* NEHPullRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHPullRefresh.m; sourceTree = "<group>"; };
 		C95881491761B5120023D191 /* NEHCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHCommand.h; sourceTree = "<group>"; };
 		C958814A1761B5120023D191 /* NEHCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHCommand.m; sourceTree = "<group>"; };
 		C958814B1761B5120023D191 /* NEHHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHHost.h; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				C95881611761B5120023D191 /* NEHNotification.m */,
 				C95881621761B5120023D191 /* NEHResult.h */,
 				C95881631761B5120023D191 /* NEHResult.m */,
+				C939912D17630538008B812E /* NEHPullRefresh.h */,
+				C939912E17630538008B812E /* NEHPullRefresh.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				C95881751761B5120023D191 /* JSONKit.m in Sources */,
 				C939911517621771008B812E /* NEHPullRefreshViewController.m in Sources */,
 				C939911E17621B5F008B812E /* EGORefreshTableHeaderView.m in Sources */,
+				C939912F17630538008B812E /* NEHPullRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

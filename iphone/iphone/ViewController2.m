@@ -31,7 +31,7 @@
 
 - (void)initWebViewController{
   self.pullRefreshViewController = [[NEHPullRefreshViewController alloc] initWithParentController:self];
-  NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
+  NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/list.html"];
   NSURL *appURL = [NSURL fileURLWithPath:startPage];
   NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
   [self.pullRefreshViewController loadRequest:appReq];
