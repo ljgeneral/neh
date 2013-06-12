@@ -25,15 +25,19 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-  self.webViewController1 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height/2)];
-  self.webViewController2 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, self.view.bounds.size.height/2, self.view.bounds.size.width, self.view.bounds.size.height/2)];
-	// Do any additional setup after loading the view.
-  NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
-  NSURL *appURL = [NSURL fileURLWithPath:startPage];
-  NSURLRequest* appReq1 = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-  NSURLRequest* appReq2 = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
-  [self.webViewController1 loadRequest:appReq1];
-  [self.webViewController2 loadRequest:appReq2];
+    CGSize viewBoundsSize = self.view.bounds.size;
+    self.webViewController1 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, 0.0, viewBoundsSize.width/2, viewBoundsSize.height/2)];
+    self.webViewController2 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(0.0, viewBoundsSize.height/2, viewBoundsSize.width, viewBoundsSize.height/2)];
+    self.webViewController3 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(viewBoundsSize.width/2, 0.0, viewBoundsSize.width/2, viewBoundsSize.height/2)];
+//    self.webViewController4 = [[NEHViewController alloc] initWithParentController:self frame:CGRectMake(viewBoundsSize.width/3, viewBoundsSize.height/2, (viewBoundsSize.width*2)/3, viewBoundsSize.height/2)];
+	  // Do any additional setup after loading the view.
+    NSString *startPage = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/www/index.html"];
+    NSURL *appURL = [NSURL fileURLWithPath:startPage];
+    NSURLRequest* appReq1 = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+    [self.webViewController1 loadRequest:appReq1];
+    [self.webViewController2 loadRequest:appReq1];
+    [self.webViewController3 loadRequest:appReq1];
+    [self.webViewController4 loadRequest:appReq1];
 }
 
 - (void)didReceiveMemoryWarning{

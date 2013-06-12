@@ -35,7 +35,7 @@ var f=function(){
   
   //Native Show Modal
   window.nativeShowModal = function(){
-    native.navigation.openModal('second.html');
+    native.navigation.openModal({url:'second.html',transitionStyle:'flip'});
   }
   
   //Native Close Modal
@@ -43,20 +43,31 @@ var f=function(){
     native.navigation.closeModal();
   }
   
+  //Native Show Modal
+  window.nativeShowWindow = function(){
+    native.navigation.openModal({url:'second.html',presentationStyle:'window'});
+  }
+  
+  //Native Close Modal
+  window.nativeCloseWindow = function(){
+    native.navigation.closeModal();
+  }
+  
+  //Native App Event
   window.addAppEvent = function(){
     _v._$addEvent(window,'appevent',function(_info){
                   native.log.write(_info);
     });
   }
   
-  //
+  //Orientation Event
   window.addOrientationEvent = function(){
     _v._$addEvent(window,'nativeorientation',function(_degree){
                     native.log.write(_degree);
                   });
   }
   
-  //
+  //NativeOrientationEventHandler
   window.nativeOrientationEventHandler = 
   _v._$addEvent('btnWriteLog','tap',writeLog);
   _v._$addEvent('btnGetDeviceInfo','tap',getDeviceInfo);
@@ -66,6 +77,8 @@ var f=function(){
   _v._$addEvent('btnNavigateBack','tap',nativeNavigationBack);
   _v._$addEvent('btnShowModal','tap',nativeShowModal);
   _v._$addEvent('btnCloseModal','tap',nativeCloseModal);
+  _v._$addEvent('btnShowWindow','tap',nativeShowWindow);
+  _v._$addEvent('btnCloseWindow','tap',nativeCloseWindow);
   _v._$addEvent('btnAppEvent','tap',addAppEvent);
   _v._$addEvent('btnOrientationEvent','tap',addOrientationEvent);
   

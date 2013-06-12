@@ -32,13 +32,20 @@
 }
 
 - (void)openModal:(NEHArgument*)nehArgument{
-  NSString *urlString = [nehArgument.arguments objectAtIndex:0];
+  NSDictionary *args = [nehArgument.arguments objectAtIndex:0];
+  NSString *urlString = [args objectForKey:@"url"];
+  NSString *transitionStyle = [args objectForKey:@"transitionStyle"];
+  NSString *presentationStyle = [args objectForKey:@"presentationStyle"];
   NSURL *url = [[self class] urlFromString:urlString];
   NEHViewController *nehViewController = [[NEHViewController alloc] init];
   NSURLRequest *appReq = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
   [nehViewController loadRequest:appReq];
-  
-  [nehViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+  if (transitionStyle != nil && [transitionStyle isEqual:@"flip"]) {
+    [nehViewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+  };
+  if (presentationStyle != nil && [presentationStyle isEqual:@"window"]){
+    [nehViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+  }
   [self.host.viewController presentViewController:nehViewController animated:YES completion:nil];
 };
 

@@ -12,4 +12,6 @@
 @interface ViewController3 : UIViewController
 @property (retain, nonatomic) NEHViewController *webViewController1;
 @property (retain, nonatomic) NEHViewController *webViewController2;
+@property (retain, nonatomic) NEHViewController *webViewController3;
+@property (retain, nonatomic) NEHViewController *webViewController4;
 @end

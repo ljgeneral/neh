@@ -19,7 +19,6 @@
 		C95881681761B5120023D191 /* NEHCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814A1761B5120023D191 /* NEHCommand.m */; };
 		C95881691761B5120023D191 /* NEHHost.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814C1761B5120023D191 /* NEHHost.m */; };
 		C958816A1761B5120023D191 /* NEHHostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C958814E1761B5120023D191 /* NEHHostManager.m */; };
-		C958816B1761B5120023D191 /* NEHNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95881501761B5120023D191 /* NEHNavigationViewController.m */; };
 		C958816C1761B5120023D191 /* NEHURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C95881521761B5120023D191 /* NEHURLProtocol.m */; };
 		C958816D1761B5120023D191 /* NEHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95881541761B5120023D191 /* NEHViewController.m */; };
 		C958816E1761B5120023D191 /* NEHArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = C95881571761B5120023D191 /* NEHArgument.m */; };
@@ -64,8 +63,6 @@
 		C958814C1761B5120023D191 /* NEHHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHHost.m; sourceTree = "<group>"; };
 		C958814D1761B5120023D191 /* NEHHostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHHostManager.h; sourceTree = "<group>"; };
 		C958814E1761B5120023D191 /* NEHHostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHHostManager.m; sourceTree = "<group>"; };
-		C958814F1761B5120023D191 /* NEHNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHNavigationViewController.h; sourceTree = "<group>"; };
-		C95881501761B5120023D191 /* NEHNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHNavigationViewController.m; sourceTree = "<group>"; };
 		C95881511761B5120023D191 /* NEHURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHURLProtocol.h; sourceTree = "<group>"; };
 		C95881521761B5120023D191 /* NEHURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEHURLProtocol.m; sourceTree = "<group>"; };
 		C95881531761B5120023D191 /* NEHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEHViewController.h; sourceTree = "<group>"; };
@@ -157,8 +154,6 @@
 				C958814C1761B5120023D191 /* NEHHost.m */,
 				C958814D1761B5120023D191 /* NEHHostManager.h */,
 				C958814E1761B5120023D191 /* NEHHostManager.m */,
-				C958814F1761B5120023D191 /* NEHNavigationViewController.h */,
-				C95881501761B5120023D191 /* NEHNavigationViewController.m */,
 				C95881511761B5120023D191 /* NEHURLProtocol.h */,
 				C95881521761B5120023D191 /* NEHURLProtocol.m */,
 				C95881531761B5120023D191 /* NEHViewController.h */,
@@ -348,7 +343,6 @@
 				C95881681761B5120023D191 /* NEHCommand.m in Sources */,
 				C95881691761B5120023D191 /* NEHHost.m in Sources */,
 				C958816A1761B5120023D191 /* NEHHostManager.m in Sources */,
-				C958816B1761B5120023D191 /* NEHNavigationViewController.m in Sources */,
 				C958816C1761B5120023D191 /* NEHURLProtocol.m in Sources */,
 				C958816D1761B5120023D191 /* NEHViewController.m in Sources */,
 				C958816E1761B5120023D191 /* NEHArgument.m in Sources */,
