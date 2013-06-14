@@ -11,7 +11,7 @@
 #import "EGORefreshTableHeaderView.h"
 
 @interface NEHPullRefreshViewController :NEHViewController <UIScrollViewDelegate,EGORefreshTableHeaderDelegate>{
-  EGORefreshTableHeaderView *_refreshHeaderView;
+  EGORefreshTableHeaderView* _refreshHeaderView;
 	BOOL _reloading;
 }
 

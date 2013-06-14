@@ -16,10 +16,10 @@
     [self successWithCallbackId:nehArgument.callbackId result:result];
 }
 
-- (NSString *) hardwarePlatform{
+- (NSString*) hardwarePlatform{
   int mib[2];
   size_t len;
-  char *machine;
+  char* machine;
   
   mib[0] = CTL_HW;
   mib[1] = HW_MACHINE;

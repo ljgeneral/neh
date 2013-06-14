@@ -25,7 +25,8 @@ var f=function(){
   
   //Native Navigation
   window.nativeNavigation = function(){
-    native.navigation.navigateToURL('second.html');
+    native.navigation.navigateToURL({url:'second.html',
+                                     title:'second'});
   }
   
   //Native Navigation Back
@@ -35,7 +36,10 @@ var f=function(){
   
   //Native Show Modal
   window.nativeShowModal = function(){
-    native.navigation.openModal({url:'second.html',transitionStyle:'flip'});
+    native.navigation.openModal({url:'second.html',
+                                 title:'Modal',
+                                 transitionStyle:'flip',
+                                 hasTopBar:'true'});
   }
   
   //Native Close Modal
@@ -45,7 +49,10 @@ var f=function(){
   
   //Native Show Modal
   window.nativeShowWindow = function(){
-    native.navigation.openModal({url:'second.html',presentationStyle:'window'});
+    native.navigation.openModal({url:'second.html',
+                                 title:'Dialog',
+                                 presentationStyle:'window',
+                                 hasTopBar:'true'});
   }
   
   //Native Close Modal

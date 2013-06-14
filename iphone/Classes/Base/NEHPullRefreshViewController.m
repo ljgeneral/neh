@@ -25,7 +25,6 @@
 		_refreshHeaderView = view;
 		[view release];
     self.webView.scrollView.delegate = self;
-		
 	}
 	
 	//  update the last update date

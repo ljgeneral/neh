@@ -14,7 +14,7 @@
 
 }
 @property (nonatomic) UIWebView* webView;
-@property (nonatomic,retain) UIViewController *parent;
+@property (nonatomic,retain) UIViewController* parent;
 
 - (id)initWithParentController:(UIViewController *)parentController;
 - (id)initWithParentController:(UIViewController *)parentController frame:(CGRect)frame;

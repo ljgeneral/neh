@@ -18,8 +18,8 @@
 + (BOOL)canInitWithRequest:(NSURLRequest*)theRequest{
     NSURL* requestUrl = [theRequest URL];
     if([[requestUrl scheme] isEqualToString:@"neh"]){
-        NSString *resourceSpecifier = [requestUrl resourceSpecifier];
-        NSString *webViewKey = [resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)];
+        NSString* resourceSpecifier = [requestUrl resourceSpecifier];
+        NSString* webViewKey = [resourceSpecifier substringFromIndex:([resourceSpecifier rangeOfString:@"?"].location+1)];
         NEHHost* host = [[NEHHostManager sharedInstance] getHostForKey:webViewKey];
         [host performSelectorOnMainThread:@selector(getCommandsFromJS)
                                withObject:nil
