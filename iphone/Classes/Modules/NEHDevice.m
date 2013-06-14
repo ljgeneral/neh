@@ -27,7 +27,7 @@
   machine = malloc(len);
   sysctl(mib, 2, machine, &len, NULL, 0);
   
-  NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
+  NSString* platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
   free(machine);
   return platform;
 }

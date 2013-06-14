@@ -23,7 +23,7 @@
   NEHModule* obj = [[NSClassFromString (command.className)alloc] initWithHost:self];
   SEL normalSelector = NSSelectorFromString([NSString stringWithFormat:@"%@:", command.methodName]);
   NEHArgument* argument=[[NEHArgument alloc] initWithCallbackId:command.callbackId
-                                                      arugments:command.arguments];
+                                                      arguments:command.arguments];
   objc_msgSend(obj, normalSelector, argument);
 }
 

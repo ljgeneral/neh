@@ -12,7 +12,7 @@
 @synthesize callbackId=_callbackId;
 @synthesize arguments=_arguments;
 - (NEHArgument*) initWithCallbackId:(NSString*)theCallbackId
-                          arugments:(NSArray*)theArguments{
+                          arguments:(NSArray*)theArguments{
     self.callbackId=[theCallbackId copy];
     self.arguments=theArguments;
     return self;

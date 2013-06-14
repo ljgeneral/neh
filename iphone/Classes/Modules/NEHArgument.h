@@ -13,5 +13,5 @@
 @property(nonatomic,strong) NSString* callbackId;
 @property(nonatomic,strong) NSArray* arguments;
 - (NEHArgument*) initWithCallbackId:(NSString*)theCallbackId
-                          arugments:(NSArray*)theArguments;
+                          arguments:(NSArray*)theArguments;
 @end
